@@ -1,0 +1,32 @@
+{
+  "name": "museum",
+  "version": "1.0.0",
+  "description": "Private repository for @lan3945663",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack --watch",
+    "style": "sass --watch src/sass/app.scss src/sass/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/lan3945663-JSFE2021Q3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/lan3945663-JSFE2021Q3/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/lan3945663-JSFE2021Q3#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.3.0",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0"
+  }
+}
