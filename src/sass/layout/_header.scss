@@ -1,0 +1,79 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  column-gap: 25px;
+  text-decoration: none;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.logo img {
+  transition-property: filter;
+  transition-duration: 0.8s;
+}
+
+.logo:hover > img {
+  filter: $filter-gold;
+}
+
+.logo:hover > .logo__title {
+  color: $color-gold;
+}
+
+.head__nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo__title {
+  font-family: Forum;
+  font-weight: normal;
+  font-size: $font-size-md;
+  line-height: 31px;
+  color: $color-white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  transition-property: color;
+  transition-duration: 0.8s;
+
+  letter-spacing: 5px;
+}
+
+.nav__item {
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  font-weight: 200;
+  line-height: 26px;
+
+  
+  color: $color-white;
+  letter-spacing: 2px;
+  transition-property: color;
+  transition-duration: 0.8s;
+  text-decoration: none;
+}
+
+.nav__item:hover {
+  cursor: pointer;
+  color: $color-gold;
+}
+
+.nav__item:active {
+  cursor: pointer;
+  color: $color-gold;
+}
+
+.nav__item_pl {
+  padding-left: 56.5px;
+}
+
+.nav {
+  align-self: center;
+}

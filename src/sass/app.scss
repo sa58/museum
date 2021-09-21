@@ -1,8 +1,12 @@
-@import "abstract/constants";
+// Vendors
+@import 'vendors/reset';
 
-$color: blue;
+// Base
+@import 'base/typography';
 
-body {
-  background-color: $color-primary;
-  color: black;
-}
+// Abstract
+@import "abstract/variables";
+
+// Layouts
+@import "layout/wrapper";
+@import "layout/header";
