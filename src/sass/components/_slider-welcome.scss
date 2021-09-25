@@ -1,0 +1,62 @@
+.welcome__slider {
+  display: flex;
+  color: $color-white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 40px 75px;
+  background-color: #000;
+  font-size: 22px;
+  line-height: 40px;
+}
+
+.carousel {
+  display: flex;
+  align-self: center;
+  column-gap: 25px;
+  margin-right: 60px;
+}
+
+.carousel-item {
+  width: 16px;
+  height: 16px;
+  background-color: $color-white;
+}
+
+.carousel-item_active {
+  background-color: $color-gold;
+}
+
+.welcome__counter {
+  display: flex;
+  column-gap: 10px;
+  margin-right: 55px;
+  font-family: $font-primary;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 40px;
+  /* identical to box height, or 182% */
+
+  text-transform: uppercase;
+  color: $color-white;
+}
+
+.carousel-arrows {
+  display: flex;
+  align-self: center;
+  column-gap: 20px;
+}
+
+.arrow {
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 8px;
+}
+
+.arrow_left {
+  background-image: url(./../assets/img/welcome-slider/arrow-left.svg);
+}
+
+.arrow_right {
+  background-image: url(./../assets/img/welcome-slider/arrow-right.svg);
+}

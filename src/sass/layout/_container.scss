@@ -1,0 +1,26 @@
+.container {
+  max-width: $content-width;
+  margin: 0 auto;
+  // padding-top: $space-size;
+  // padding-bottom: $space-size;
+}
+
+.section__title {
+  font-family: $font-secondary;
+  font-size: $font-size-xl;
+  line-height: 90px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.section__title_light {
+  color: $color-white;
+}
+
+.section__title_gold {
+  color: $color-gold;
+}
+
+.section_dark {
+  background-color: $color-dark;
+}

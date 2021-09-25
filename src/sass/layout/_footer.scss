@@ -1,0 +1,84 @@
+.footer__info {
+  padding-top: $indent-base;
+  padding-bottom: $indent-base;
+}
+
+.footer__info {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 140px;
+  padding-top: 82px;
+  padding-bottom: 30px;
+}
+
+.logo {
+  flex-basis: 10%;
+}
+
+.nav {
+  flex-basis: 43%;
+}
+
+.footer__nav {
+  display: grid;
+  grid-template-columns: 255px 255px;
+  padding-top: 5px;
+  padding-bottom: 12px;
+  row-gap: 25px;
+}
+
+.icon {
+  display: block;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 10.5px;
+  background-position: center;
+  transition-property: filter;
+  transition-duration: 0.8s;
+}
+
+.icon:hover {
+  filter: $filter-gold;
+}
+
+.icon-youtube {
+  background-image: url(./../assets/img/svg/youtube.svg);
+}
+
+.icon-instagram {
+  background-image: url(./../assets/img/svg/instagram.svg);
+}
+
+.icon-facebook {
+  background-image: url(./../assets/img/svg/facebook.svg);
+}
+
+.icon-twitter {
+  background-image: url(./../assets/img/svg/twitter.svg);
+}
+
+.icon-pin {
+  background-image: url(./../assets/img/svg/pinterest.svg);
+}
+
+.footer-links {
+  display: flex;
+  column-gap: 25px;
+  align-self: flex-end;
+  margin-bottom: 16px;
+}
+
+.footer__cred {
+  display: flex;
+  justify-content: space-between;
+  color: $color-white;
+  padding: 50px 0;
+  font-family: $font-primary;
+  font-weight: 200;
+  font-size: $font-size-sm;
+  line-height: 22px;
+  letter-spacing: 2px;
+}

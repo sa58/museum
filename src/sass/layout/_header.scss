@@ -1,6 +1,8 @@
 .head {
   display: flex;
   justify-content: space-between;
+  padding-top: $space-size;
+  padding-bottom: $space-size;
 }
 
 .logo {
@@ -51,8 +53,6 @@
   font-size: $font-size-sm;
   font-weight: 200;
   line-height: 26px;
-
-  
   color: $color-white;
   letter-spacing: 2px;
   transition-property: color;

@@ -1,0 +1,36 @@
+.contacts {
+  margin-bottom: $indent-base;
+  margin-top: $indent-base;
+}
+
+.contacts__title {
+  padding-bottom: 24px;
+}
+
+.contacts__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts__name {
+  padding-bottom: 50px;
+  font-family: $font-primary;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: $font-size-l;
+  color: $color-dark;
+}
+
+.contacts__item {
+  margin-bottom: 25px;
+  font-family: $font-primary;
+  font-weight: 300;
+  font-size: $font-size-sm;
+  line-height: 28px;
+  color: $color-dark;
+}
+
+#map {
+  width: 960px;
+  height: 620px;
+}

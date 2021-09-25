@@ -1,0 +1,38 @@
+.journey-slides {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.jorney-counter {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.journey-item {
+  width: 12px;
+  height: 12px;
+  background-color: #999;
+  row-gap: 40px;
+  border-radius: 100%;
+}
+
+.journey-item_active {
+  background-color: #333;
+}
+
+.jorney-counter__arrow {
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 12px;
+}
+
+.jorney-counter__arrow_left {
+  background-image: url(./../assets/img/carousel-video/arr-left.svg);
+}
+
+.jorney-counter__arrow_right {
+  background-image: url(./../assets/img/carousel-video/arr-right.svg);
+}

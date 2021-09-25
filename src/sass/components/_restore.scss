@@ -1,0 +1,27 @@
+.restore {
+  padding-top: $indent-base;
+  padding-bottom: $indent-base;
+  display: flex;
+  column-gap: 61px;
+}
+
+.explore__title {
+  padding-bottom: 25px;
+}
+
+.explore__info {
+  margin-bottom: 28px;
+  font-family: $font-primary;
+  font-weight: 300;
+  font-size: $font-size-sm;
+  line-height: 38px;
+  color: $color-white;
+}
+
+.explore__info_yellow {
+  color: $color-gold;
+}
+
+.restore__example {
+  padding-top: 12px;
+}
