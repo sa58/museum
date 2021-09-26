@@ -17,6 +17,12 @@
   background-color: #999;
   row-gap: 40px;
   border-radius: 100%;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    background-color: $color-dark-red;
+  }
 }
 
 .journey-item_active {
@@ -27,12 +33,22 @@
   background-repeat: no-repeat;
   width: 10px;
   height: 12px;
+  cursor: pointer;
+  transition: all $transition-base;
 }
 
 .jorney-counter__arrow_left {
   background-image: url(./../assets/img/carousel-video/arr-left.svg);
+
+  &:hover {
+    background-image: url(./../assets/img/carousel-video/arr-left-copy.svg);
+  }
 }
 
 .jorney-counter__arrow_right {
   background-image: url(./../assets/img/carousel-video/arr-right.svg);
+
+  &:hover {
+    background-image: url(./../assets/img/carousel-video/arr-right-copy.svg);
+  }
 }

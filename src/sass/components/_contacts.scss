@@ -28,6 +28,11 @@
   font-size: $font-size-sm;
   line-height: 28px;
   color: $color-dark;
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
 }
 
 #map {

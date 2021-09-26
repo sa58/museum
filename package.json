@@ -21,6 +21,7 @@
   "homepage": "https://github.com/rolling-scopes-school/lan3945663-JSFE2021Q3#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.3.0",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.3.0",

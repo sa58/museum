@@ -21,6 +21,12 @@
   width: 16px;
   height: 16px;
   background-color: $color-white;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    background-color: $color-gold;
+  }
 }
 
 .carousel-item_active {
@@ -50,7 +56,14 @@
 .arrow {
   background-repeat: no-repeat;
   width: 30px;
-  height: 8px;
+  height: 30px;
+  cursor: pointer;
+  background-position-y: center;
+  transition: all $transition-base;
+
+  &:hover {
+    filter: $filter-gold;
+  }
 }
 
 .arrow_left {

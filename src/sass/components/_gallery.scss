@@ -1,8 +1,71 @@
 .gallery {
   height: 2200px;
+  overflow-y: hidden;
+}
+
+.item {
+  display: block;
+  width: 456px;
+}
+
+// https://webformyself.com/css-masonry-s-pomoshhyu-flexbox-nth-child-i-order/
+
+.picture-inner-container {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  /* Для контейнера нужна фиксированная высота, и он 
+   * должен быть выше самого высокого элемента. */
+  height: calc(600px * 5 + 50px);
+  row-gap: 24px;
+}
+
+/* Реорганизуем элементы в 3 ряда */
+.item:nth-child(3n+1) {
+  order: 1;
+}
+
+.item:nth-child(3n+2) {
+  order: 2;
+}
+
+.item:nth-child(3n) {
+  order: 3;
+}
+
+.item:nth-child(3) {
+  padding-top: 50px;
+}
+
+.item:nth-child(1) {
+  padding-top: 50px;
+}
+
+/* Вводим новый столбец */
+.picture-inner-container::before,
+.picture-inner-container::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+}
+
+.wall {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  width: 1440px;
+  height: 360px;
+  top: 1600px;
+  position: absolute;
+}
+
+.picture-container {
+  position: relative;
 }
 
 .gallery__title {
   padding-top: $indent-base;
   padding-bottom: $indent-base;
 }
+
+
