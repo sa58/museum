@@ -1,3 +1,8 @@
+// TODO: move to common
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: $content-width;
   margin: 0 auto;

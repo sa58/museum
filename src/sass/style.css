@@ -59,6 +59,10 @@ table {
 }
 
 @font-face {}
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -724,6 +728,7 @@ table {
   border-radius: 10px;
   transition-property: background-color;
   transition-duration: 0.8s;
+  text-decoration: none;
 }
 
 .welcome__href:hover {
