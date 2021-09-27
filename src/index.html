@@ -12,7 +12,6 @@
 
   <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
   <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -159,7 +158,17 @@
         </div>
 
         <div class="restore__example">
-          <img src="assets/img/explore-slider/before.jpg" alt="las meninas">
+          <div class="image-slider">
+            
+            <div id="top-image">
+              <img src="assets/img/explore-slider/after.jpg" alt="Before" />
+              
+            </div>
+            <img src="assets/img/explore-slider/before.jpg" alt="las meninas before" />
+            
+            <img class="explore__slider" src="assets/img/explore-slider/slider.png" alt="">
+            <!-- <input id="range-input" type="range" /> -->
+          </div>
         </div>
       </div>
     </div>
@@ -291,7 +300,7 @@
             <p class="tickets__step tickets__step_amount">Amount</p>
 
             <div class="tickets__item tickets__amount_align">
-              <p class="age">Basic 18+</p>
+              <p class="tickets-age">Basic 18+</p>
               <div class="amount">
                 <button class="amount__item amount__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
                 <input class="amount__item amount__input" type="number" min="0" max="20" value="1" readonly>
@@ -300,7 +309,7 @@
             </div>
 
             <div class="tickets__item tickets__amount_align">
-              <p class="age">Senior 65+</p>
+              <p class="tickets-age">Senior 65+</p>
               <div class="amount">
                 <button class="amount__item amount__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
                 <input class="amount__item amount__input" type="number" min="0" max="20" value="1" readonly>
@@ -387,196 +396,204 @@
 
 
   <div class="book__modal hidden">
-    <div class="book__btn_close"></div>
-    <div class="book__wrapper">
-      
-      <div class="book__form">
-        <img src="./assets/img/svg/louvre-logo-gold.svg" alt="Louvre">
-        <h2 class="section__title section__title_modal section__title_gold">booking tickets</h2>
+    <form>
+      <div class="book__btn_close"></div>
+      <div class="book__wrapper">
+        
+        <div class="book__form">
+          <img src="./assets/img/svg/louvre-logo-gold.svg" alt="Louvre">
+          <h2 class="section__title section__title_modal section__title_gold">booking tickets</h2>
 
-        <div class="tour">Tour to Louvre</div>
+          <div class="tour">Tour to Louvre</div>
 
-        <div class="section__underline"></div>
-        <form>
-          <div class="input-container date">
-            <div class="icn-date"></div>
-            <label class="wrapper">
-              <input
-              class="input__date"
-                 type="date"
-                required="required" 
-              />
-              <span></span>
-            </label>
-          </div>
-
-
-          <div class="input-container date">
-            <div class="icn-date"></div>
-            <label class="wrapper">
-              <input
-                class="input__date"
-                type="date"
-                required="required" 
-              />
-              <span></span>
-            </label>
-          </div>
-
-
-
-          <div class="input-container1 name">
-            <span class="icn-name"></span>
-            <input class="input-field" type="text" placeholder="Name" name="name">
-          </div>
-
-          <div class="input-container1 name">
-            <span class="icn-email"></span>
-            <input class="input-field" type="text" placeholder="E-mail" name="name">
-          </div>
-
-          <div class="input-container1 name">
-            <span class="icn-phone"></span>
-            <input class="input-field" type="text" placeholder="Phone" name="phone">
-          </div>
-
-          <div class="input-container1 name">
-            <span class="icn-ticket"></span>
-            <select class="input-field select-ticket">
-              <option value="" disabled selected>Ticket Type</option>
-              <option>Пункт 1</option>
-              <option>Пункт 2</option>
-            </select>
-          </div>
-
-          <div class="entry-ticket">
-            <div class="entry__title">Entry ticket</div>
-            <div class="section__underline"></div>
-
-            <div class="entry-type">
-              <div class="age">Basic 18+ (20 €)</div>
-              <div class="age-quantity">
-
-                <div class="amount">
-                  <button class="amount__item amount__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
-                  <input class="amount__item amount__input" type="number" min="0" max="20" value="1" readonly>
-                  <button class="amount__item amount__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
-                </div>
-  
-              </div>
-            </div>
-            <div class="entry-quantity">
-              <div class="age">Senior 65+ (10 €)</div>
-              <div class="age-quantity">d</div>
-            </div>
-          </div>
-
-        </form>
-      </div>
-      <div class="book__overview">
-        <div class="view">
-          <div class="overview__info">
-            <p class="overview__title">Overview</p>
-            <p class="overview__name">Tour to Louvre</p>
-  
-            <p class="overview__item">
-              <span class="ico ico-date"></span>
-              <span class="overview__content">Friday, August 19</span>
-            </p>
-  
-            <p class="overview__item">
-              <span class="ico ico-time"></span>
-              <span class="overview__content">16 : 30</span>
-            </p>
-  
-            <p class="overview__item">
-              <span class="ico ico-type"></span>
-              <span class="overview__content">Temporary exhibition</span>
-            </p>
-          </div>
-
-          <div class="overview__image"></div>
-        </div>
-
-        <div class="price price_first">
-          <div class="price-age"><span class="num">2</span>Basic (20 €)</div>
-          <div class="price-sum">40 €</div>
-        </div>
-
-        <div class="price">
-          <div class="price-age"><span class="num">2</span>Senior (10 €)</div>
-          <div class="price-sum">20 €</div>
-        </div>
-
-        <div class="section__underline"></div>
-        <div class="book__total">
-          <div class="total__title">Total</div>
-          <div class="total__price">60 €</div>
-        </div>
-
-        <div class="card">
-          <div class="card-back">
-            <div class="black-line"></div>
-           
-            <div class="card__item card__item_cvc">
-              <label class="card-label card-label_cvc" for="card-number">CVC/CVV</label>
-              <input class="card__cvc" type="text" name="card-number" id="card-number" />
-              <div class="card-label card-label_more">
-                The last<br>
-                3 or 4 digits
-                on back<br>
-                of the card
-              </div>
-            </div>
-          </div>
-
-          <div class="card-front">
-            <div class="card__item">
-              <label class="card-label" for="card-number">Card number</label>
-              <input class="card__number" type="text" name="card-number" />
+          <div class="section__underline"></div>
+          <div class="form">
+            <div class="input-container date">
+              <div class="icn-date"></div>
+              <label class="wrapper">
+                <input
+                  class="input__date"
+                  type="date"
+                  required="required" 
+                />
+                <span></span>
+              </label>
             </div>
 
-            <div class="card__item">
-              <label class="card-label" for="card-month">Expiration date:</label>
-              <div class="inputs__num">
-                <div class="inputs-contaier">
-                  <input class="card-month" id="card-month" type="number" value="03" min="1" max="31" step="1" name="card-month" />
-                  <div class="btns">
-                    <button class="btns__item btns__item_top" onclick="this.parentElement.previousElementSibling.stepUp()">
-                      <span class="btns_top"></span>
-                    </button>
-                    <button class="btns__item" onclick="this.parentElement.previousElementSibling.stepDown()">
-                      <span class="btns_bottom"></span>
-                    </button>
+
+            <div class="input-container date">
+              <div class="icn-time"></div>
+              <label class="wrapper">
+                <input
+                  class="input__date"
+                  type="time"
+                  required="required" 
+                />
+                <span></span>
+              </label>
+            </div>
+
+
+
+            <div class="field-container name">
+              <span class="icn-name"></span>
+              <input class="input-field" type="text" placeholder="Name" name="name">
+            </div>
+
+            <div class="field-container name">
+              <span class="icn-email"></span>
+              <input class="input-field" type="email" placeholder="E-mail" name="name">
+            </div>
+
+            <div class="field-container name">
+              <span class="icn-phone"></span>
+              <input class="input-field" type="tel" placeholder="Phone" name="phone">
+            </div>
+
+            <div class="field-container name">
+              <span class="icn-ticket"></span>
+              <select class="input-field select-ticket">
+                <option value="" disabled selected>Ticket Type</option>
+                <option>Пункт 1</option>
+                <option>Пункт 2</option>
+              </select>
+            </div>
+
+            <div class="entry-ticket">
+              <div class="entry__title">Entry ticket</div>
+              <div class="section__underline"></div>
+
+              <div class="entry-type">
+                <div class="age age_first">Basic 18+ (20 €)</div>
+                <div class="age-quantity">
+
+                  <div class="entry__amount">
+                    <button class="entry__item entry__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                    <input class="entry__item entry__input" type="number" min="0" max="20" value="2" readonly>
+                    <button class="entry__item entry__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                   </div>
+    
                 </div>
-
-                <div class="inputs-contaier">
-                  <input class="card-month" type="number" value="2024" min="2018" max="2030" step="1" name="card-month" />
-                  <div class="btns">
-                    <button class="btns__item btns__item_top" onclick="this.parentElement.previousElementSibling.stepUp()">
-                      <span class="btns_top"></span>
-                    </button>
-                    <button class="btns__item" onclick="this.parentElement.previousElementSibling.stepDown()">
-                      <span class="btns_bottom"></span>
-                    </button>
+              </div>
+              <div class="entry-quantity">
+                <div class="age">Senior 65+ (10 €)</div>
+                <div class="age-quantity">
+                  <div class="entry__amount">
+                    <button class="entry__item entry__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                    <input class="entry__item entry__input" type="number" min="0" max="20" value="2" readonly>
+                    <button class="entry__item entry__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                   </div>
                 </div>
               </div>
             </div>
 
-
-            <div class="card__item">
-              <label class="card-label" for="card-number">Cardholder name:</label>
-              <input class="card__holder" type="text" name="card-number" />
-            </div>
           </div>
         </div>
-      
-      <button class="card__btn_book">Book</button>
-      </div>
+        <div class="book__overview">
+          <div class="view">
+            <div class="overview__info">
+              <p class="overview__title">Overview</p>
+              <p class="overview__name">Tour to Louvre</p>
+    
+              <p class="overview__item">
+                <span class="ico ico-date"></span>
+                <span class="overview__content">Friday, August 19</span>
+              </p>
+    
+              <p class="overview__item">
+                <span class="ico ico-time"></span>
+                <span class="overview__content">16 : 30</span>
+              </p>
+    
+              <p class="overview__item">
+                <span class="ico ico-type"></span>
+                <span class="overview__content">Temporary exhibition</span>
+              </p>
+            </div>
 
-    </div>
+            <div class="overview__image"></div>
+          </div>
+
+          <div class="price price_first">
+            <div class="price-age"><span class="num">2</span>Basic (20 €)</div>
+            <div class="price-sum">40 €</div>
+          </div>
+
+          <div class="price">
+            <div class="price-age"><span class="num">2</span>Senior (10 €)</div>
+            <div class="price-sum">20 €</div>
+          </div>
+
+          <div class="section__underline"></div>
+          <div class="book__total">
+            <div class="total__title">Total</div>
+            <div class="total__price">60 €</div>
+          </div>
+
+          <div class="card">
+            <div class="card-back">
+              <div class="black-line"></div>
+            
+              <div class="card__item card__item_cvc">
+                <label class="card-label card-label_cvc" for="card-number">CVC/CVV</label>
+                <input class="card__cvc" type="text" name="card-number" id="card-number" />
+                <div class="card-label card-label_more">
+                  The last<br>
+                  3 or 4 digits
+                  on back<br>
+                  of the card
+                </div>
+              </div>
+            </div>
+
+            <div class="card-front">
+              <div class="card__item">
+                <label class="card-label" for="card-number">Card number</label>
+                <input class="card__number" type="text" name="card-number" />
+              </div>
+
+              <div class="card__item">
+                <label class="card-label" for="card-month">Expiration date:</label>
+                <div class="inputs__num">
+                  <div class="inputs-contaier">
+                    <input class="card-month" id="card-month" type="number" value="03" min="1" max="31" step="1" name="card-month" />
+                    <div class="btns">
+                      <button class="btns__item btns__item_top" onclick="this.parentElement.previousElementSibling.stepUp()">
+                        <span class="btns_top"></span>
+                      </button>
+                      <button class="btns__item" onclick="this.parentElement.previousElementSibling.stepDown()">
+                        <span class="btns_bottom"></span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="inputs-contaier">
+                    <input class="card-month" type="number" value="2024" min="2018" max="2030" step="1" name="card-month" />
+                    <div class="btns">
+                      <button class="btns__item btns__item_top" onclick="this.parentElement.previousElementSibling.stepUp()">
+                        <span class="btns_top"></span>
+                      </button>
+                      <button class="btns__item" onclick="this.parentElement.previousElementSibling.stepDown()">
+                        <span class="btns_bottom"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="card__item">
+                <label class="card-label" for="card-number">Cardholder name:</label>
+                <input class="card__holder" type="text" name="card-number" />
+              </div>
+            </div>
+          </div>
+        
+        <button type="submit" class="card__btn_book">Book</button>
+        </div>
+
+      </div>
+    </form>
   </div>
 
 

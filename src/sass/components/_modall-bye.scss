@@ -1,3 +1,5 @@
+// TODO: refactor
+
 .cover {
   position: fixed;
   top: 0;
@@ -48,7 +50,7 @@ body.not-scrollable {
 }
 
 .hidden {
-  left: -100vw;
+  left: calc(-100vw - 1440px);
 }
 
 .book__wrapper {
@@ -74,7 +76,7 @@ body.not-scrollable {
   color: #710707;
 }
 
-form {
+.form {
   margin-top: 74px;
   display: flex;
   flex-wrap: wrap;
@@ -112,7 +114,15 @@ form {
   align-self: center;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+.icn-time {
+  background-image: url(./../assets/img/svg/time.svg);
+  width: 15px;
+  height: 15px;
+  align-self: center;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
   display: block;
   background: url(./../assets/img/svg/arrow.svg) no-repeat;
   width: 17px;
@@ -128,13 +138,22 @@ input[type=date]:invalid + span:after {
   top: 2px;
 }
 
-input[type=date]:focus:invalid + span:after {
+input[type=date]:focus:invalid + span:after,
+input[type=time]:focus:invalid + span:after {
   display: none;
 }
 
 input:not(:focus):invalid {
   color: transparent;
 }
+
+input[type=time]:invalid + span:after {
+  content: "Time";
+  position: absolute;
+  left: 15px;
+  top: 2px;
+}
+
 
 label.wrapper {
   align-self: flex-end;
@@ -176,7 +195,7 @@ label.wrapper {
   margin: 0;
 }
 
-.input-container1 {
+.field-container {
   display: flex;
   align-items: center;
 }
@@ -205,6 +224,7 @@ label.wrapper {
   background: url(./../assets/img/svg/ticket.svg) no-repeat;
   width: 15px;
   height: 15px;
+  margin-right: 3px;
 }
 
 .select-ticket {
@@ -216,12 +236,12 @@ select {
   -webkit-appearance: none;
   appearance: none;
   background: url(./../assets/img/svg/arrow.svg) no-repeat;
-  background-position: right 5px top 50%;
+  background-position: right 0 top 50%;
 }
 
 // -----------------
 .entry-ticket {
-  padding: 10px 15px 0;
+  padding: 10px 15px 12px;
   flex-basis: 100%;
   border: 1px solid #000;
 }
@@ -232,15 +252,24 @@ select {
   justify-content: space-between;
 }
 
+.entry-type {
+  margin-bottom: 18px;
+}
+
 .age {
-  margin-bottom: 20px;
+  // margin-bottom: 16px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
   color: $color-dark;
+  align-self: center;
   // padding: 10px 15px 0px;
+}
+
+.age_first {
+  // margin-bottom: 23px;
 }
 
 .entry__title {
@@ -255,7 +284,7 @@ select {
 
 .entry-ticket .section__underline {
   margin-top: 6px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 // -------------------------------
@@ -423,7 +452,7 @@ input[type=number] {
 }
 
 .price_first {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .book__total {
@@ -596,6 +625,7 @@ input[type=number] {
 }
 
 .card__btn_book {
+  padding: 13px 5px 5px;
   box-sizing: border-box;
   width: 220px;
   height: 45px;
@@ -606,4 +636,49 @@ input[type=number] {
   float: right;
   background-color: #710707;
   font-weight: 300;
+  border: none;
+  transition: all $transition-base;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-gold;
+    // color: $color-dark;
+  }
+}
+
+
+// -------------------------------
+
+.entry__amount {
+  box-sizing: border-box;
+  // border: 1px solid black;
+  width: 105px;
+  height: 25px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.entry__item {
+  width: 35px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-family: $font-primary;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $font-size-xs;
+  line-height: 21px;
+  color: $color-dark;
+}
+
+.entry__input {
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.entry__btn {
+  background-color: $color-dark;
+  color: $color-white;
+  cursor: pointer;
 }

@@ -95,3 +95,14 @@ x.forEach(el => {
   img.alt = `galery1`;
   pictureInnerContainer.append(img);
 })
+
+// ------------------------------
+
+
+// var imageContainer = document.querySelector("#top-image");
+// var image = imageContainer.querySelector("img");
+// var range = document.querySelector("#range-input");
+
+// range.oninput = function() {
+//   imageContainer.style.width = this.value + "%";
+// }

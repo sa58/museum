@@ -31,11 +31,11 @@
 }
 
 .tickets__type .tickets__step {
-  margin-bottom: 50px;
+  margin-bottom: 52px;
 }
 
 .tickets__step_amount {
-  margin-bottom: 25px;
+  margin-bottom: 28px;
   text-align: right;
 }
 
@@ -63,6 +63,17 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.tickets__age {
+  margin-bottom: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: $color-dark;
+  // padding: 10px 15px 0px;
 }
 
 /* Firefox */
@@ -117,8 +128,14 @@ input[type=number] {
   padding: 4px 12px;
 }
 
-.age {
+.tickets-age {
   margin-bottom: 14px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000;
 }
 
 .tickets__amount_align {
