@@ -30,6 +30,10 @@
 }
 
 .jorney-counter__arrow {
+  background-color: transparent;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
   background-repeat: no-repeat;
   width: 10px;
   height: 12px;
