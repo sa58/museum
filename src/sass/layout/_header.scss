@@ -3,6 +3,16 @@
   justify-content: space-between;
   padding-top: $space-size;
   padding-bottom: $space-size;
+
+  @include laptop {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  @include tablet {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  };
 }
 
 .logo {
@@ -10,23 +20,49 @@
   align-items: baseline;
   column-gap: 25px;
   text-decoration: none;
+
+  @include mobile {
+    img {
+      width: 29px;
+    }
+  };
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover > img {
+    filter: $filter-gold;
+  }
+
+  &:hover > .logo__title {
+    color: $color-gold;
+  }
 }
 
-.logo:hover {
-  cursor: pointer;
+.burger {
+  display: none;
+
+  @include laptop {
+    width: 32px;
+    height: 18px;
+    display: block;
+    align-self: center;
+    background-image: url(./../assets/img/svg/burger.svg);
+    background-repeat: no-repeat;
+  };
+}
+
+.nav {
+  align-self: center;
+
+  @include laptop {
+    display: none;
+  }
 }
 
 .logo img {
-  transition-property: filter;
-  transition-duration: 0.8s;
-}
-
-.logo:hover > img {
-  filter: $filter-gold;
-}
-
-.logo:hover > .logo__title {
-  color: $color-gold;
+  transition: filter $transition-base;
 }
 
 .head__nav {
@@ -35,45 +71,46 @@
 }
 
 .logo__title {
-  font-family: Forum;
-  font-weight: normal;
-  font-size: $font-size-md;
-  line-height: 31px;
+  @include font(Forum, $font-size-md, normal, 31px);
+
+  @include tablet {
+    @include font(Forum, $font-size-md, normal, 50px);
+  }
+
+  @include mobile {
+    @include font(Forum, 16px, 400, 18px);
+  }
+
   color: $color-white;
   text-transform: uppercase;
   letter-spacing: 5px;
-  transition-property: color;
-  transition-duration: 0.8s;
-
+  transition: color $transition-base;
   letter-spacing: 5px;
 }
 
 .nav__item {
-  font-family: $font-primary;
-  font-size: $font-size-sm;
-  font-weight: 200;
-  line-height: 26px;
+  @include font($font-primary, $font-size-sm, 200, 26px);
+
   color: $color-white;
   letter-spacing: 2px;
-  transition-property: color;
-  transition-duration: 0.8s;
+  transition: color $transition-base;
   text-decoration: none;
-}
 
-.nav__item:hover {
-  cursor: pointer;
-  color: $color-gold;
-}
+  &_pl {
+    padding-left: 56.5px;
 
-.nav__item:active {
-  cursor: pointer;
-  color: $color-gold;
-}
+    @include desktop {
+      padding-left: 50px;
+    }
+  }
 
-.nav__item_pl {
-  padding-left: 56.5px;
-}
+  &:hover {
+    cursor: pointer;
+    color: $color-gold;
+  }
 
-.nav {
-  align-self: center;
+  &:active {
+    cursor: pointer;
+    color: $color-gold;
+  }
 }

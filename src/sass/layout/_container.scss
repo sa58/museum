@@ -6,8 +6,11 @@ html {
 .container {
   max-width: $content-width;
   margin: 0 auto;
-  // padding-top: $space-size;
-  // padding-bottom: $space-size;
+
+  @include laptop {
+    padding-right: 20px;
+    padding-left: 20px;
+  };
 }
 
 .section__title {
