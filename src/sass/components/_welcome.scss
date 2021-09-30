@@ -7,21 +7,79 @@
   background-position: top right;
   background-repeat: no-repeat;
   background-size: 1000px 750px;
+
+  @include laptop {
+    // TODO
+    height: unset;
+    background-size: 700px 525px;
+  }
+
+  @include tablet {
+    height: 861px;
+    background-size: 728px 546px;
+    background-position-y: 215px;
+    background-position-x: center;
+  }
+
+  @include mobile {
+    height: 546px;
+    background-size: 380px 285px;
+    background-position-y: 181px;
+    background-position-x: center;
+  }
 }
 
 .welcome__title {
   padding-top: 150px;
   padding-bottom: 28px;
+
+  @include laptop {
+    padding-top: 50px;
+
+    @include font(Forum, 50px, normal, 90px);
+  }
+
+  @include tablet {
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 25px;
+
+    @include font(Forum, 40px, normal, 60px);
+  }
+
+  @include mobile {
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 0;
+    margin-bottom: 25px;
+
+    @include font($font-secondary, $font-size-md, normal, 40px);
+  }
 }
 
 .welcome__more {
   margin-bottom: 75px;
-  font-family: $font-primary;
-  font-size: $font-size-md;
-  font-weight: 300;
-  line-height: 33px;
   color: $color-white;
   letter-spacing: 2px;
+
+  @include font($font-primary, $font-size-md, normal, 33px);
+
+  @include laptop {
+    margin-bottom: 50px;
+
+    @include font($font-primary, 24px, 300, 28px);
+  }
+
+  @include tablet {
+    text-align: center;
+
+    @include font($font-primary, 20px, 300, 23px);
+  }
+
+  @include mobile {
+    @include font($font-primary, 16px, 300, 19px);
+  }
 }
 
 .welcome__href {
@@ -30,15 +88,24 @@
   padding: 24px 68px;
   background-color: $color-dark-red;
   color: $color-white;
-  font-family: $font-primary;
-  font-weight: 200;
-  font-size: 22px;
-  line-height: 26px;
   letter-spacing: 2px;
   border-radius: 10px;
   transition-property: background-color;
   transition-duration: 0.8s;
   text-decoration: none;
+
+  @include font($font-primary, $font-size-sm, 200, 26px);
+
+  @include laptop {
+    padding: 18px 45px;
+    margin-bottom: 192px;
+
+    @include font($font-primary, 20px, 300, 23px);
+  }
+
+  @include tablet {
+    display: none;
+  }
 }
 
 .welcome__href:hover {

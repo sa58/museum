@@ -10,9 +10,16 @@
   }
 
   @include tablet {
+    // TODO: match PP
+    height: 41px;
     padding-top: 34px;
     padding-bottom: 34px;
-  };
+  }
+
+  @include mobile {
+    // TODO: match PP
+    height: unset;
+  }
 }
 
 .logo {

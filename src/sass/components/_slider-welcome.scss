@@ -8,6 +8,32 @@
   background-color: #000;
   font-size: 22px;
   line-height: 40px;
+
+  @include laptop {
+    padding: 40px 75px 40px 224px;
+    column-gap: 45px;
+  }
+
+  @include tablet {
+    // TODO: fix paddings
+
+    width: 100%;
+    padding: unset;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    justify-content: center;
+    column-gap: 45px;
+  }
+
+  @include mobile {
+    // TODO: fix paddings
+    width: unset;
+    column-gap: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
 }
 
 .carousel {
@@ -15,6 +41,14 @@
   align-self: center;
   column-gap: 25px;
   margin-right: 60px;
+
+  @include laptop {
+    margin-right: unset;
+  }
+
+  @include mobile {
+    column-gap: 10px;
+  }
 }
 
 .carousel-item {
@@ -26,6 +60,16 @@
 
   &:hover {
     background-color: $color-gold;
+  }
+
+  @include laptop {
+    width: 12px;
+    height: 12px;
+  }
+
+  @include mobile {
+    width: 7px;
+    height: 7px;
   }
 }
 
@@ -45,12 +89,28 @@
 
   text-transform: uppercase;
   color: $color-white;
+
+  @include laptop {
+    margin-right: unset;
+
+    @include font($font-primary, 20px, 300, 40px);
+  }
+
+  @include mobile {
+    column-gap: 6px;
+
+    @include font($font-primary, 16px, 300, 40px);
+  }
 }
 
 .carousel-arrows {
   display: flex;
   align-self: center;
   column-gap: 20px;
+
+  @include mobile {
+    column-gap: 15px;
+  }
 }
 
 .arrow {
@@ -67,6 +127,11 @@
 
   &:hover {
     filter: $filter-gold;
+  }
+
+  @include mobile {
+    background-size: 20px 20px;
+    width: 20px;
   }
 }
 
