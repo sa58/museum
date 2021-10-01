@@ -1,15 +1,39 @@
 .visiting {
   padding-top: $indent-base;
   padding-bottom: $indent-base;
+
+  @include laptop {
+    padding-top: 60px;
+  }
+
+  @include tablet {
+    padding-top: 40px;
+  }
 }
 
 .visiting__title {
   padding-bottom: 26px;
+
+  @include laptop {
+    padding-bottom: 18px;
+  }
+
+  @include tablet {
+    padding-bottom: 22px;
+  }
 }
 
 .section__underline {
   position: relative;
   margin-bottom: 78px;
+
+  @include laptop {
+    margin-bottom: 60px;
+  }
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
 }
 
 .section__underline::after {
@@ -26,10 +50,37 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 60px;
   grid-row-gap: 75px;
+
+  @include laptop {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    // TODO add calc 108px
+    grid-column-gap: 11%;
+    grid-row-gap: 60px;
+  }
+
+  @include tablet {
+    grid-column-gap: 8%;
+    grid-row-gap: 40px;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  @include mobile {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+  }
 }
 
 .visiting__item {
   text-decoration: none;
+
+  @include laptop {
+    &:nth-child(2n + 1) {
+      justify-self: end;
+    }
+  }
 }
 
 .visiting__name {
@@ -39,11 +90,32 @@
   color: $color-dark;
   text-transform: uppercase;
   letter-spacing: 5px;
+
+  @include laptop {
+    @include font(Forum, $font-size-md, normal, 31px);
+
+    letter-spacing: 3px;
+  }
+
+  @include tablet {
+    @include font(Forum, $font-size-sm, normal, 24px);
+
+    word-break: break-all;
+    letter-spacing: 3px;
+  }
+
+  @include mobile {
+    @include font(Forum, $font-size-xs, normal, 20px);
+
+    letter-spacing: 5px;
+  }
 }
 
 .visiting__block {
   padding-top: 25px;
   padding-bottom: 7px;
+  
+
 }
 
 .visiting__how {
@@ -80,4 +152,16 @@
 
 .visiting__item:hover > .visiting__underline::after {
   width: 100%;
+}
+
+.visiting__image {
+  max-width: 100%;
+
+  @include laptop {
+    max-width: 330px;
+  }
+
+  @include tablet {
+    max-width: 100%;
+  }
 }
