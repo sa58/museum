@@ -3,6 +3,25 @@
   justify-content: space-between;
   margin-top: 40px;
   margin-bottom: 40px;
+
+  // iframe {
+  //   width: 452px;
+  //   height: 254px;
+  // }
+
+  @include laptop {
+    column-gap: 40px;
+
+    // iframe {
+    //   height: 170px;
+    // }
+  }
+}
+
+.journey-wrap {
+  @include laptop {
+    max-width: 100%;
+  }
 }
 
 .jorney-counter {

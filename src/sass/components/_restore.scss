@@ -3,10 +3,39 @@
   padding-bottom: $indent-base;
   display: flex;
   column-gap: 61px;
+
+  @include laptop {
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include tablet {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  @include tablet {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+// TODO: calculate
+.restore__intro {
+  flex-basis: 46%;
+
+  @include tablet {
+    flex-basis: auto;
+  }
 }
 
 .explore__title {
   padding-bottom: 25px;
+
+  @include tablet {
+    padding-bottom: 20px;
+  }
 }
 
 .explore__info {
@@ -16,12 +45,39 @@
   font-size: $font-size-sm;
   line-height: 38px;
   color: $color-white;
+
+  @include laptop {
+    margin-bottom: unset;
+
+    @include font(Roboto, 20px, 300, 38px);
+  }
+
+  @include tablet {
+    &_tablet {
+      display: none;
+    }
+  }
 }
 
 .explore__info_yellow {
   color: $color-gold;
 }
 
+.explore__info_hidden {
+  @include laptop {
+    display: none;
+  }
+}
+
 .restore__example {
   padding-top: 12px;
+
+  @include laptop {
+    padding-top: 54px;
+    align-self: center;
+  }
+
+  @include tablet {
+    padding-top: unset;
+  }
 }
