@@ -31,6 +31,26 @@ console.log(`
 (0) ripple-эффект
 (10) картины в блоке Galery отображаются в рандомном порядке
 `)
+
+
+// ------------------------------
+
+let burger = document.querySelector('.burger');
+let aside = document.querySelector('.aside');
+
+burger.addEventListener('click', showOpen);
+
+function showOpen() {
+  console.log(this)
+  this.classList.toggle('open');
+  aside.classList.toggle('open');
+  
+}
+
+// -------------------------------
+
+
+
 const progress = document.querySelector('.range');
 const progress1 = document.querySelector('.video__volume');
 
@@ -136,3 +156,5 @@ imgs.forEach(el => {
 // range.oninput = function() {
 //   imageContainer.style.width = this.value + "%";
 // }
+
+

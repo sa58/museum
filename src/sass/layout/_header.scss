@@ -57,8 +57,17 @@
     align-self: center;
     background-image: url(./../assets/img/svg/burger.svg);
     background-repeat: no-repeat;
+    cursor: pointer;
+
+    &.open {
+      background-image: url(./../assets/img/svg/aside-close.svg);
+      width: 25px;
+      height: 25px;
+    }
   };
 }
+
+
 
 .nav {
   align-self: center;

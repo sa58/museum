@@ -1,0 +1,49 @@
+.aside {
+  position: absolute;
+  background-color: $color-dark;
+  width: 297px;
+  height: 100%;
+  left: -200vw;
+  // display: none;
+  z-index: 10;
+  transition: all $transition-base;
+
+}
+
+.open {
+  left: 0;
+  // display: initial;
+  transition: all $transition-base;
+}
+
+.aside__nav {
+  padding: 35px 55px;
+}
+
+.aside__item {
+  a {
+    @include font(Roboto, 20px, 300, 23px);
+
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  column-gap: 8px;
+  letter-spacing: 2px;
+  color: $color-white;
+  padding-bottom: 25px;
+  padding-right: 65px;
+}
+
+.aside__wrap {
+  align-self: center;
+}
+
+.aside__arrow {
+  background-image: url(./../assets/img/svg/aside-arrow.svg);
+  width: 12px;
+  height: 12px;
+  background-size: 100% 100%;
+}
