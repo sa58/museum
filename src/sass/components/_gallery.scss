@@ -1,11 +1,27 @@
 .gallery {
   height: 2200px;
   overflow-y: hidden;
+
+  @include laptop {
+    height: 1460px;
+  }
+
+  @include tablet {
+    height: 1220px;
+  }
+
+  @include mobile {
+    height: 757px;
+  }
 }
 
 .item {
   display: block;
-  width: 456px;
+  width: calc(33.3% - 24px);
+
+  @include tablet {
+    width: calc(50% - 12px);
+  }
 }
 
 // https://webformyself.com/css-masonry-s-pomoshhyu-flexbox-nth-child-i-order/
@@ -17,8 +33,20 @@
   align-content: space-between;
   /* Для контейнера нужна фиксированная высота, и он 
    * должен быть выше самого высокого элемента. */
-  height: calc(600px * 5 + 50px);
+  height: calc(570px * 5 + 24px * 3);
   row-gap: 24px;
+
+  @include laptop {
+    height: calc(380px * 5 + 24px * 3);
+  }
+
+  @include tablet {
+    height: calc(352px * 10 + 50px);
+  }
+
+  @include mobile {
+    height: calc(223px * 10 + 50px);
+  }
 }
 
 /* Реорганизуем элементы в 3 ряда */
@@ -32,10 +60,31 @@
 
 .item:nth-child(3n) {
   order: 3;
+
+  @include tablet {
+    order: unset;
+  }
 }
+
+.item {
+  @include tablet {
+    &:nth-child(odd) {
+      order: 1;
+    }
+
+    &:nth-child(even) {
+      order: 2;
+    }
+  }
+}
+
 
 .item:nth-child(3) {
   padding-top: 50px;
+  
+  @include tablet {
+    padding-top: unset;
+  }
 }
 
 .item:nth-child(1) {
@@ -45,27 +94,40 @@
 /* Вводим новый столбец */
 .picture-inner-container::before,
 .picture-inner-container::after {
-  content: "";
-  flex-basis: 100%;
-  width: 0;
-  order: 2;
+  // content: "";
+  // flex-basis: 100%;
+  // width: 0;
+  // order: 2;
 }
 
 .wall {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-  width: 1440px;
+  max-width: 1440px;
   height: 360px;
   top: 1600px;
   position: absolute;
+
+  @include laptop {
+    top: 905px;
+  }
 }
 
 .picture-container {
   position: relative;
+  // overflow-x: hidden;
 }
 
 .gallery__title {
   padding-top: $indent-base;
   padding-bottom: $indent-base;
+
+  @include laptop {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include tablet {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
-
-

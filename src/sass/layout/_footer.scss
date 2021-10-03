@@ -1,30 +1,82 @@
 .footer__info {
   padding-top: $indent-base;
   padding-bottom: $indent-base;
+
+  .nav__item {
+    @include tablet {
+      @include font($font-primary, 18px, 200, 21px);
+
+      letter-spacing: 2px;
+    }
+
+    @include mobile {
+      @include font($font-primary, 16px, 200, 19px);
+    }
+  }
 }
 
 .footer__info {
   display: flex;
   justify-content: space-between;
-  column-gap: 140px;
+  // column-gap: 140px;
   padding-top: 85px;
   padding-bottom: 30px;
+
+  @include laptop {
+    padding-top: 60px;
+  }
+
+  @include tablet {
+    padding-top: 40px;
+    flex-wrap: wrap;
+    padding-bottom: 18px;
+  }
 }
 
 .logo {
   flex-basis: 10%;
+
+  @include tablet {
+    flex: 1 1 37%;
+  }
+
+  @include mobile {
+    flex-basis: 100%;
+    column-gap: 20px;
+  }
 }
 
 .nav {
   flex-basis: 43%;
+
+  @include tablet {
+    flex: 1 1 63%;
+  }
 }
 
 .footer__nav {
   display: grid;
-  grid-template-columns: 255px 255px;
+  grid-template-columns: 255px auto;
   padding-top: 5px;
   padding-bottom: 12px;
   row-gap: 25px;
+
+  @include laptop {
+    grid-template-columns: auto auto;
+  }
+
+  @include tablet {
+    padding-top: 20px;
+  }
+
+  @include mobile {
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    padding-top: 40px;
+    column-gap: 5px;
+    padding-bottom: 5px;
+    row-gap: 30px;
+  }
 }
 
 .icon {
@@ -69,6 +121,28 @@
   column-gap: 25px;
   align-self: flex-end;
   margin-bottom: 16px;
+
+  @include laptop {
+    margin-bottom: 12px;
+    column-gap: unset;
+    flex-basis: 34.5%;
+    justify-content: space-between;
+  }
+
+  @include tablet {
+    flex: 1 1 auto;
+    max-width: 637px;
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 25px;
+    /* padding-right: 72px; */
+    margin-top: 35px;
+  }
+
+  @include mobile {
+    justify-content: center;
+    column-gap: 5px;
+  }
 }
 
 .footer__cred {
@@ -81,4 +155,75 @@
   font-size: $font-size-sm;
   line-height: 22px;
   letter-spacing: 2px;
+
+  @include laptop {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  @include tablet {
+    padding: 34px 0 50px;
+  }
+
+  @include mobile {
+    padding: 34px 25px 50px;
+    letter-spacing: 2px;
+
+    @include font($font-primary, 16px, 200, 22px);
+  }
+}
+
+.footer__item {
+  width: auto;
+}
+
+.qw {
+  // width: 100%;
+  align-self: center;
+}
+
+.nav__wrap {
+  @include laptop {
+    padding-left: 30px;
+  }
+
+  @include tablet {
+    padding-left: 30px;
+    padding-right: 60px;
+
+    &:nth-child(even) {
+      padding-right: 0;
+    }
+  }
+
+  @include mobile {
+    padding-left: unset;
+    padding-right: unset;
+
+    &:nth-child(even) {
+      padding-right: unset;
+    }
+
+    &_gal {
+      order: 5;
+    }
+
+    &_exp {
+      order: 4;
+    }
+
+    &_tic {
+      order: 3;
+    }
+
+    &_con {
+      order: 6;
+    }
+  }
+}
+
+.school {
+  @include mobile {
+    display: none;
+  }
 }

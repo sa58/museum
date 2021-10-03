@@ -1,25 +1,61 @@
 .tickets {
   padding-bottom: 75px;
+
+  @include laptop {
+    padding-bottom: 54px;
+
+    .section__underline {
+      // margin-bottom: 42px;
+    }
+  }
+
+  @include tablet {
+    padding-bottom: 40px;
+  }
 }
 
 .tickets__wrap {
   display: flex;
   column-gap: 60px;
   color: white;
-}
 
-.tickets__title {
-  padding-top: $indent-base;
+  @include laptop {
+    column-gap: 80px;
+  }
+
+  @include tablet {
+    column-gap: 60px;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+  }
 }
 
 .tickets__type {
   /* display: flex; */
   /* flex-basis: 100%; */
   justify-content: space-between;
+
+  @include laptop {
+    display: none;
+  }
 }
 
 .tickets__title {
+  padding-top: $indent-base;
   padding-bottom: 27px;
+
+  @include laptop {
+    padding-bottom: 20px;
+    padding-top: 60px;
+  }
+
+  @include tablet {
+    padding-top: 40px;
+  }
 }
 
 .tickets__step {
@@ -37,6 +73,21 @@
 .tickets__step_amount {
   margin-bottom: 28px;
   text-align: right;
+
+  @include laptop {
+    text-align: unset;
+  }
+
+  @include laptop {
+    margin-bottom: 40px;
+  }
+
+  @include mobile {
+    @include font(Roboto, 16px, 700, 19px);
+
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 
 .tickets__item {
@@ -47,6 +98,10 @@
   font-weight: 300;
   line-height: 26px;
   color: $color-dark;
+
+  @include laptop {
+    margin-bottom: 28px;
+  };
 }
 
 .tickets__item:hover {
@@ -136,12 +191,34 @@ input[type=number] {
   font-size: 22px;
   line-height: 26px;
   color: #000;
+
+  @include laptop {
+    margin-bottom: 10px;
+  }
+
+  @include tablet {
+    margin-bottom: 8px;
+  }
+
+  @include mobile {
+    @include font(Roboto, 16px, 300, 19px);
+
+    margin-bottom: 14px;
+  }
 }
 
 .tickets__amount_align {
   // padding-top: 11px;
   // margin-bottom: 25px;
   align-self: flex-end;
+
+  @include laptop {
+    align-self: stretch;
+  }
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
 }
 
 .tickets__step_total {
@@ -153,6 +230,24 @@ input[type=number] {
   letter-spacing: 1.65px;
   margin-top: 40px;
   margin-bottom: 60px;
+
+  @include laptop {
+    margin-top: 0px;
+    margin-bottom: 65px;
+    letter-spacing: 2.5px;
+  }
+
+  @include tablet {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  @include mobile {
+    @include font(Roboto, 16px, 700, 19px);
+
+    margin-top: 20px;
+    letter-spacing: 0;
+  }
 }
 
 .tickets__btn {
@@ -169,6 +264,15 @@ input[type=number] {
   border-radius: 2px;
   transition-property: background-color;
   transition-duration: 0.8s;
+
+  // TODO
+  @include laptop {
+    &_sm {
+      @include font(Roboto, 16px, 300, 19px);
+    }
+
+    padding: 15px 50px;
+  }
 }
 
 .tickets__btn:hover {
@@ -184,10 +288,44 @@ input[type=number] {
 .tickets__order {
   display: flex;
   justify-content: space-between;
-  flex-basis: 100%;
+  // ширина картинки + gap
+  flex-basis: calc(100% - 780px);
+
+  @include laptop {
+    flex-basis: unset;
+  }
 }
 
 .tickets__amount {
   display: flex;
   flex-direction: column;
+}
+
+.tickets__image {
+  flex-basis: 720px;
+  height: 550px;
+
+  @include laptop {
+    flex-basis: 700px;
+    height: 440px;
+  }
+
+  @include tablet {
+    flex-basis: 444px;
+    height: 340px;
+  }
+
+  @include mobile {
+    width: 100%;
+    flex-basis: 160px;
+  }
+}
+
+.tickets__img {
+  background-image: url(./../assets/img/tickets.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

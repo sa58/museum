@@ -15,21 +15,63 @@ body.not-scrollable {
 }
 
 .book__modal {
-  width: 1440px;
-  height: 845px;
+  max-width: 1440px;
+  // height: 845px;
   position: fixed;
   z-index: 1000;
-  top: calc(50% - 422.5px);
+  top: 0;
   left: calc(50% - 720px);
   background-color: #fff;
   box-shadow: 0 4px 50px rgba(0, 0, 0, 0.3);
   transition-property: left;
   transition-duration: 2s;
+  overflow: scroll;
+  max-height: 100vh;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 
   .section__underline {
     margin-top: 10px;
     margin-bottom: unset;
   }
+
+  @include desktop {
+    // top: calc(50% - (100% / 2));
+    left: 0;
+  }
+
+  @include laptop {
+    top: 0;
+    max-width: 1024px;
+
+    // top: calc(50% - (100% / 2));
+    // left: calc(50% - (100% / 2));
+  }
+
+  @include tablet {
+    max-width: 590px;
+    // max-height: 1479px;
+    
+    left: calc(50% - 280px);
+
+    
+    overflow-y: auto;
+    width: unset;
+  }
+  
+  @include tablet-modal {
+    left: 0;
+  }
+
+  @include mobile {
+    max-width: 420px;
+    // max-height: 1754px;
+    left: 0;
+  }
+  
 }
 
 .book__btn_close {
@@ -47,6 +89,10 @@ body.not-scrollable {
   &:hover {
     filter: $filter-gold;
   }
+
+  @include tablet {
+    top: 25px;
+  }
 }
 
 .hidden {
@@ -54,16 +100,46 @@ body.not-scrollable {
 }
 
 .book__wrapper {
-  padding: 91px 235px;
+  padding: 91px calc((100% - 970px - 40px) / 2);
   display: grid;
-  grid-template-columns: 400px 530px;
-  column-gap: 40px;
+  grid-template-columns: 42% calc(58% - 40px);
+  justify-content: space-between;
+
+  @include laptop {
+    padding: 75px 27px;
+    display: grid;
+    grid-template-columns: 41.5% calc(58.5% - 40px);
+    /* column-gap: 40px; */
+    justify-content: space-between;
+  }
+
+  @include tablet {
+    padding: 75px 30px;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  @include small-modal {
+    padding: 75px 10px;
+  }
 }
 
 .section__title_modal {
   font-size: 50px;
   line-height: 55px;
   letter-spacing: unset;
+
+  @include tablet {
+    // padding: 75px 30px;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  @include mobile {
+    padding: unset;
+
+    @include font(Forum, 32px, 300, 35px);
+  }
 }
 
 .tour {
@@ -83,6 +159,11 @@ body.not-scrollable {
   column-gap: 20px;
   row-gap: 20px;
   justify-content: space-between;
+
+  @include tablet {
+    margin-top: 52px;
+    margin-bottom: 50px;
+  }
 }
 
 .name {
@@ -105,6 +186,14 @@ body.not-scrollable {
   line-height: 21px;
   display: flex;
   align-items: center;
+
+  @include tablet {
+    width: 202px;
+  }
+
+  @include mobile {
+    width: 317px;
+  }
 }
 
 .icn-date {
@@ -353,6 +442,10 @@ input[type=number] {
 .book__overview {
   padding: 25px 30px;
   border: 1px solid #000;
+
+  @include tablet {
+    padding: 25px 16px;
+  }
 }
 
 .view {
@@ -423,6 +516,11 @@ input[type=number] {
   background-image: url(./../assets/img/book-img.jpg);
   width: 150px;
   height: 120px;
+
+  @include mobile {
+    width: 120px;
+    height: 96px;
+  }
 }
 
 .price-age,
@@ -473,6 +571,12 @@ input[type=number] {
 .card {
   position: relative;
   height: 265px;
+
+  @include mobile {
+    position: initial;
+    height: unset;
+    margin-bottom: 40px;
+  }
 }
 
 .card-back {
@@ -525,6 +629,28 @@ input[type=number] {
   background-position: top 34px right 20px, top 65px right 20px;
 }
 
+.card-back,
+.card-front,
+.black-line {
+  @include mobile {
+    width: 330px;
+    position: initial;
+    box-shadow: unset;
+  }
+
+  @include small-modal {
+    width: auto;
+  }
+}
+
+.black-line {
+  @include mobile {
+    top: 25px;
+    position: relative;
+    margin-bottom: 25px;
+  }
+}
+
 .card__item {
   display: flex;
   flex-direction: column;
@@ -571,6 +697,10 @@ input[type=number] {
   width: 320px;
   height: 35px;
   border: 0.5px solid #A4A4A3;
+
+  @include mobile {
+    width: unset;
+  }
 }
 
 .card-label_more {

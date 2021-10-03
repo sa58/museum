@@ -1,13 +1,20 @@
 .journey {
   margin-bottom: $indent-base;
 
+  // TODO: get rid of margin
+
   @include laptop {
     padding-bottom: 60px;
+    margin-bottom: unset;
   }
 
   @include tablet {
     margin-bottom: unset;
     padding-bottom: 80px;
+  }
+
+  @include mobile {
+    padding-bottom: 40px;
   }
 }
 

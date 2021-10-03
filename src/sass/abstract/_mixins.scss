@@ -28,3 +28,15 @@
     @content;
   }
 }
+
+@mixin tablet-modal {
+  @media (max-width: $tablet-modal) {
+    @content;
+  }
+}
+
+@mixin small-modal {
+  @media (max-width: $small-modal) {
+    @content;
+  }
+}

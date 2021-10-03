@@ -83,7 +83,24 @@
               </li>
             </ul>
 
+            <div class="aside__imgs">
+              <div class="aside__img aside__img_wide"></div>
+              <div class="aside__img aside__img_two"></div>
+              <div class="aside__img aside__img_three"></div>
+            </div>
+
+
+            <ul class="aside-links">
+              <li><a href="https://www.youtube.com/user/louvre" class="icon icon-youtube" rel="noopener"></a></li>
+              <li><a href="https://www.instagram.com/museelouvre/" class="icon icon-instagram" rel="noopener"></a></li>
+              <li><a href="https://www.facebook.com/museedulouvre" class="icon icon-facebook" rel="noopener"></a></li>
+              <li><a href="http://twitter.com/museelouvre" class="icon icon-twitter" rel="noopener"></a></li>
+              <li><a href="https://www.pinterest.fr/museedulouvre/" class="icon icon-pin" rel="noopener"></a></li>
+            </ul>
           </div>
+
+
+
         </div>
       <div class="welcome__wall">
 
@@ -297,7 +314,7 @@
     </div>
   </section>
 
-<!-- 
+
   <section class="gallery section_dark" id="gallery">
     <div class="container">
       <h2 class="gallery__title section__title section__title_light">art gallery</h2>
@@ -318,8 +335,10 @@
       <div class="section__underline"></div>
 
       <div class="tickets__wrap">
-        <img src="./assets/img/tickets.jpg" alt="venus aeneas shield">
-
+        <div class="tickets__image">
+          <div class="tickets__img"></div>
+          <!-- <img src="./assets/img/tickets.jpg" alt="venus aeneas shield"> -->
+        </div>
         <div class="tickets__order">
           <div class="tickets__type">
             <p class="tickets__step">Ticket Type</p>
@@ -366,9 +385,9 @@
               </div>
             </div>
 
-            <div class="tickets__step tickets__step_amount tickets__step_total">Total €220</div>
+            <div class="tickets__step tickets__step_amount tickets__step_total">Total € 220</div>
 
-            <button class="tickets__btn">Buy Now</button>
+            <button class="tickets__btn tickets__btn_sm">Buy Now</button>
           </div>
         </div>
       </div>
@@ -395,7 +414,8 @@
           <div class="contacts__item">mail: <a href="mailto:info@louvre.fr">info@louvre.fr</a></div>
         </div>
         <div class="contacts__map">
-          <div id='map'></div>
+          <!-- <div class="contacts__img" id=''></div> -->
+          <img class="contacts__img" src="assets/img/Rectangle.jpg">
         </div>
       </div>
     </div>
@@ -404,30 +424,30 @@
   <footer class="footer section_dark">
     <div class="container">
       <div class="footer__info">
-        <a class="logo" href="#">
+        <a class="footer__item logo" href="#">
           <img src="./assets/img/svg/louvre-logo.svg" alt="Louvre">
           <div class="logo__title">louvre</div>
         </a>
-        <nav class="nav">
+        <nav class="footer__item nav">
           <ul class="footer__nav nav">
-            <li><a class="nav__item" href="#visiting">Visiting</a></li>
-            <li><a class="nav__item" href="#gallery">Gallery</a></li>
+            <li class="nav__wrap nav__wrap_vis"><a class="nav__item" href="#visiting">Visiting</a></li>
+            <li class="nav__wrap nav__wrap_gal"><a class="nav__item" href="#gallery">Gallery</a></li>
 
             
-            <li><a class="nav__item" href="#explore">Explore</a></li>
-            <li><a class="nav__item" href="#tickets">Tickets</a></li>
+            <li class="nav__wrap nav__wrap_exp"><a class="nav__item" href="#explore">Explore</a></li>
+            <li class="nav__wrap nav__wrap_tic"><a class="nav__item" href="#tickets">Tickets</a></li>
 
-            <li><a class="nav__item" href="#journey">Video</a></li>
-            <li><a class="nav__item" href="#contacts">Contacts</a></li>
+            <li class="nav__wrap nav__wrap_vid"><a class="nav__item" href="#journey">Video</a></li>
+            <li class="nav__wrap nav__wrap_con"><a class="nav__item" href="#contacts">Contacts</a></li>
           </ul>
         </nav>
 
-        <ul class="footer-links">
-          <li><a href="https://www.youtube.com/user/louvre" class="icon icon-youtube" rel="noopener"></a></li>
-          <li><a href="https://www.instagram.com/museelouvre/" class="icon icon-instagram" rel="noopener"></a></li>
-          <li><a href="https://www.facebook.com/museedulouvre" class="icon icon-facebook" rel="noopener"></a></li>
-          <li><a href="http://twitter.com/museelouvre" class="icon icon-twitter" rel="noopener"></a></li>
-          <li><a href="https://www.pinterest.fr/museedulouvre/" class="icon icon-pin" rel="noopener"></a></li>
+        <ul class="footer__item footer-links">
+          <li class="qw"><a href="https://www.youtube.com/user/louvre" class="icon icon-youtube" rel="noopener"></a></li>
+          <li class="qw"><a href="https://www.instagram.com/museelouvre/" class="icon icon-instagram" rel="noopener"></a></li>
+          <li class="qw"><a href="https://www.facebook.com/museedulouvre" class="icon icon-facebook" rel="noopener"></a></li>
+          <li class="qw"><a href="http://twitter.com/museelouvre" class="icon icon-twitter" rel="noopener"></a></li>
+          <li class="qw"><a href="https://www.pinterest.fr/museedulouvre/" class="icon icon-pin" rel="noopener"></a></li>
         </ul>
       </div>
 
@@ -441,10 +461,10 @@
       <div class="user">lan3945663</div>
     </div>
 
-  </footer> -->
+  </footer>
 
 
-  <!-- <div class="book__modal hidden">
+  <div class="book__modal hidden">
     <form>
       <div class="book__btn_close"></div>
       <div class="book__wrapper">
@@ -580,21 +600,6 @@
           </div>
 
           <div class="card">
-            <div class="card-back">
-              <div class="black-line"></div>
-            
-              <div class="card__item card__item_cvc">
-                <label class="card-label card-label_cvc" for="card-number">CVC/CVV</label>
-                <input class="card__cvc" type="text" name="card-number" id="card-number" />
-                <div class="card-label card-label_more">
-                  The last<br>
-                  3 or 4 digits
-                  on back<br>
-                  of the card
-                </div>
-              </div>
-            </div>
-
             <div class="card-front">
               <div class="card__item">
                 <label class="card-label" for="card-number">Card number</label>
@@ -636,6 +641,21 @@
                 <input class="card__holder" type="text" name="card-number" />
               </div>
             </div>
+
+            <div class="card-back">
+              <div class="black-line"></div>
+            
+              <div class="card__item card__item_cvc">
+                <label class="card-label card-label_cvc" for="card-number">CVC/CVV</label>
+                <input class="card__cvc" type="text" name="card-number" id="card-number" />
+                <div class="card-label card-label_more">
+                  The last<br>
+                  3 or 4 digits
+                  on back<br>
+                  of the card
+                </div>
+              </div>
+            </div>
           </div>
         
         <button type="submit" class="card__btn_book">Book</button>
@@ -644,7 +664,6 @@
       </div>
     </form>
   </div>
- -->
 
   <div class="cover hidden" id="cover"></div>
 

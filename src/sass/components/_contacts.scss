@@ -1,41 +1,123 @@
 .contacts {
+  // margin-bottom: $indent-base;
+
   margin-bottom: $indent-base;
-  margin-top: $indent-base;
+  margin-top: 58px;
+
+  @include laptop {
+    padding-top: 60px;
+    margin-top: unset;
+    margin-bottom: unset;
+    padding-bottom: 60px;
+  }
+
+  @include tablet {
+    padding-top: 40px;
+    padding-bottom: 65px;
+  }
+
+  @include mobile {
+    padding-bottom: 37px;
+  }
 }
 
 .contacts__title {
   padding-bottom: 24px;
+
+  @include laptop {
+    padding-bottom: 16px;
+  }
+
+  @include tablet {
+    padding-bottom: 22px;
+  }
 }
 
 .contacts__wrap {
   display: flex;
   justify-content: space-between;
+
+  @include tablet {
+    flex-direction: column;
+  }
 }
 
 .contacts__name {
   padding-bottom: 50px;
-  font-family: $font-primary;
-  font-weight: 500;
-  font-size: 28px;
-  line-height: $font-size-l;
   color: $color-dark;
+
+  @include font($font-primary, $font-size-l, 500, $font-size-l);
+
+  @include laptop {
+    @include font($font-primary, 24px, 500, 28px);
+
+    padding-bottom: 35px;
+  }
+
+  @include tablet {
+    padding-top: 2px;
+    padding-bottom: 44px;
+
+    @include font($font-primary, 20px, 500, 23px);
+  }
+
+  @include mobile {
+    // padding-top: 2px;
+    // padding-bottom: 44px;
+
+    @include font($font-primary, 16px, 500, 19px);
+  }
 }
 
 .contacts__item {
   margin-bottom: 25px;
-  font-family: $font-primary;
-  font-weight: 300;
-  font-size: $font-size-sm;
-  line-height: 28px;
   color: $color-dark;
 
   a {
     color: #000;
     text-decoration: none;
   }
+
+  @include font($font-primary, $font-size-sm, 300, 28px);
+
+  @include laptop {
+    @include font($font-primary, 20px, 300, 24px);
+
+    margin-bottom: 14px;
+  }
+
+  @include tablet {
+    @include font($font-primary, $font-size-xs, 300, 21px);
+  }
+
+  @include mobile {
+    @include font($font-primary, 16px, 300, 19px);
+  }
 }
 
 #map {
   width: 960px;
   height: 620px;
+}
+
+.contacts__img {
+  width: 100%;
+}
+
+.contacts__map {
+  width: 960px;
+
+  @include laptop {
+    max-width: 694px;
+  }
+
+  @include tablet {
+    max-width: 100%;
+  }
+}
+
+.contacts__info {
+  @include tablet {
+    margin-bottom: 25px;
+  }
 }

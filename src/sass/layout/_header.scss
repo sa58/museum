@@ -67,11 +67,7 @@
   };
 }
 
-
-
-.nav {
-  align-self: center;
-
+.head .nav {
   @include laptop {
     display: none;
   }
