@@ -194,6 +194,10 @@ body.not-scrollable {
   @include mobile {
     width: 317px;
   }
+
+  @include small-modal {
+    width: 120px;
+  }
 }
 
 .icn-date {

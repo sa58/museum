@@ -5,7 +5,17 @@ let burger = document.querySelector('.burger');
 let aside = document.querySelector('.aside');
 let asideitem = document.querySelector('.aside__name');
 
-// aside.addEventListener('click', toggleAside1);
+let arr = ['.welcome__href', '.welcome__more', '.welcome__title'];
+
+let wallElements = arr.map(el => document.querySelector(el));
+
+const toogleWallAside = () => {
+  wallElements.forEach(el => {
+    console.log(el)
+    el.classList.toggle('hidden');
+  })
+}
+
 burger.addEventListener('click', toggleAside);
 document.addEventListener('click', toggleAside2);
 
@@ -16,15 +26,7 @@ function toggleAside2(e) {
   if((parent1 != null || parent === null) && aside.classList.contains('open')) {
     burger.classList.toggle('open');
     aside.classList.toggle('open');
-  }
-}
-
-function toggleAside1(e) {
-  let parent = e.target.closest('.aside__item');
-
-  if(parent) {
-    burger.classList.toggle('open');
-    aside.classList.toggle('open');
+    toogleWallAside()
   }
 }
 
@@ -32,6 +34,7 @@ function toggleAside(e) {
   e.preventDefault();
   e.stopPropagation();
 
+  toogleWallAside();
   this.classList.toggle('open');
   aside.classList.toggle('open');
 }
@@ -67,8 +70,6 @@ const updateProgress = e => {
 window.addEventListener("load", updateProgress);
 window.addEventListener("resize", updateProgress);
 
-
-
 progress.addEventListener('input', function() {
   const value = this.value;
   this.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #c4c4c4 ${value}%, #c4c4c4 100%)`
@@ -90,8 +91,7 @@ progress1.addEventListener('input', function() {
 //     L.marker([48.8619, 2.3330]).addTo(map);
 //     L.marker([48.8625, 2.3365]).addTo(map);
 
-
-    // --------------------
+// --------------------
 
 const cover = document.getElementById('cover');
 const modalIconClose = document.querySelector('.book__btn_close');
@@ -117,10 +117,6 @@ modalIconClose.addEventListener('click', () => {
   cover.classList.add('hidden');
   makeDonateModal.classList.add('hidden');
 });
-
-
-
-// // ------------------------------
 
 const pictureInnerContainer = document.querySelector('.picture-inner-container');
 
@@ -163,7 +159,6 @@ imgs.forEach(el => {
 
 // ------------------------------
 
-
 // var imageContainer = document.querySelector("#top-image");
 // var image = imageContainer.querySelector("img");
 // var range = document.querySelector("#range-input");
@@ -171,5 +166,3 @@ imgs.forEach(el => {
 // range.oninput = function() {
 //   imageContainer.style.width = this.value + "%";
 // }
-
-

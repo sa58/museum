@@ -63,7 +63,7 @@
   color: $color-white;
   letter-spacing: 2px;
 
-  @include font($font-primary, $font-size-md, normal, 33px);
+  @include font($font-primary, $font-size-md, 300, 33px);
 
   @include laptop {
     margin-bottom: 50px;
