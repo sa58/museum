@@ -20,8 +20,6 @@ function toggleAside2(e) {
 }
 
 function toggleAside1(e) {
-  console.log(e)
-
   let parent = e.target.closest('.aside__item');
 
   if(parent) {
@@ -38,16 +36,13 @@ function toggleAside(e) {
   aside.classList.toggle('open');
 }
 
-
 const progress = document.querySelector('.range');
 const progress1 = document.querySelector('.video__volume');
 
-
 const updateProgress = e => {
-  console.log(document.documentElement.clientWidth)
   let w = document.documentElement.clientWidth
 
-  if(w = 1024) {
+  if(w === 1024) {
     progress.value = 40;
     progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${40}%, #c4c4c4 ${40}%, #c4c4c4 100%)`
 
@@ -55,12 +50,15 @@ const updateProgress = e => {
     progress1.style.background = `linear-gradient(to right, #710707 0%, #710707 ${38}%, #c4c4c4 ${38}%, #c4c4c4 100%)`
   }
 
-  if(w = 768) {
+  if(w === 768) {
     progress1.value = 31;
     progress1.style.background = `linear-gradient(to right, #710707 0%, #710707 ${31}%, #c4c4c4 ${31}%, #c4c4c4 100%)`
+
+    progress.value = 39;
+    progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${39}%, #c4c4c4 ${39}%, #c4c4c4 100%)`
   }
 
-  if(w = 420) {
+  if(w === 420) {
     progress1.value = 40;
     progress1.style.background = `linear-gradient(to right, #710707 0%, #710707 ${40}%, #c4c4c4 ${40}%, #c4c4c4 100%)`
   }

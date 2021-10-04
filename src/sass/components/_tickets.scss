@@ -78,7 +78,7 @@
     text-align: unset;
   }
 
-  @include laptop {
+  @include tablet {
     margin-bottom: 40px;
   }
 
@@ -267,6 +267,14 @@ input[type=number] {
 
   // TODO
   @include laptop {
+    &_sm {
+      @include font(Roboto, 22px, 300, 24px);
+    }
+
+    padding: 12px 38px;
+  }
+
+  @include mobile {
     &_sm {
       @include font(Roboto, 16px, 300, 19px);
     }
