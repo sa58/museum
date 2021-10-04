@@ -14,6 +14,7 @@
 </head>
 <body>
 
+
   <header class="section_dark">
     <div class="container head">
       <a class="logo">
@@ -31,12 +32,78 @@
           <li class="nav__item_pl"><a class="nav__item" href="#contacts">Contacts</a></li>
         </ul>
       </nav>
+
+      <div class="burger"></div>
     </div>
   </header>
 
   <section class="welcome section_dark" id="welcome">
     <div class="container">
+
+        <div class="aside">
+          <div class="aside__nav">
+            <ul class="aside__list">
+              <li class="aside__item">
+                <div class="aside__name"><a href="#visiting">Visiting</a></div>
+
+                <div class="aside__wrap">
+                  <div class="aside__arrow"></div>
+                </div>
+              </li>
+              <li class="aside__item">
+                <div class="aside__name"><a href="#explore">Explore</a></div>
+                <div class="aside__wrap">
+                  <div class="aside__arrow"></div>
+                </div>
+              </li>
+              
+              <li class="aside__item">
+                <div class="aside__name"><a href="#journey">Video</a></div>
+                <div class="aside__wrap">
+                  <div class="aside__arrow"></div>
+                </div>
+              </li>
+              <li class="aside__item">
+                <div class="aside__name"><a href="#gallery">Gallery</a></div>
+                <div class="aside__wrap">
+                  <div class="aside__arrow"></div>
+                </div>
+              </li>
+              <li class="aside__item">
+                <div class="aside__name"><a href="#tickets">Tickets</a></div>
+                <div class="aside__wrap">
+                  <div class="aside__arrow"></div>
+                </div>
+              </li>
+              <li class="aside__item">
+                <div class="aside__name"><a href="#contacts">Contacts</a></div>
+                <div class="aside__wrap">
+                  <div class="aside__arrow"></div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="aside__imgs">
+              <div class="aside__img aside__img_wide"></div>
+              <div class="aside__img aside__img_two"></div>
+              <div class="aside__img aside__img_three"></div>
+            </div>
+
+
+            <ul class="aside-links">
+              <li><a href="https://www.youtube.com/user/louvre" class="icon icon-youtube" rel="noopener"></a></li>
+              <li><a href="https://www.instagram.com/museelouvre/" class="icon icon-instagram" rel="noopener"></a></li>
+              <li><a href="https://www.facebook.com/museedulouvre" class="icon icon-facebook" rel="noopener"></a></li>
+              <li><a href="http://twitter.com/museelouvre" class="icon icon-twitter" rel="noopener"></a></li>
+              <li><a href="https://www.pinterest.fr/museedulouvre/" class="icon icon-pin" rel="noopener"></a></li>
+            </ul>
+          </div>
+
+
+
+        </div>
       <div class="welcome__wall">
+
         <h2 class="welcome__title section__title section__title_light">Welcome <br> to the Louvre</h2>
 
         <div class="welcome__more">From the castle to the museum</div>
@@ -57,8 +124,8 @@
             <div class="carousel-item"></div>
           </div>
           <div class="carousel-arrows">
-            <div class="arrow arrow_left"></div>
-            <div class="arrow arrow_right"></div>
+            <button class="arrow arrow_left"></button>
+            <button class="arrow arrow_right"></button>
           </div>
         </div>
       </div>
@@ -94,7 +161,7 @@
 
         <a class="visiting__item" target="_blank" rel="noopener" href="./tours/tour3.html">
           <img class="visiting__image" src="assets/img/virtual-tour/colonnade.jpg" alt="Colonnade Perrault">
-          <h3 class="visiting__block visiting__name">Colonnade Perrault</h3>
+          <h3 class="visiting__block visiting__name visiting__name_ls">Colonnade Perrault</h3>
 
           <div class="visiting__underline"></div>
 
@@ -114,7 +181,7 @@
 
         <a class="visiting__item" target="_blank" rel="noopener" href="./tours/tour5.html">
           <img class="visiting__image" src="assets/img/virtual-tour/mona-lisa.jpg" alt="Mona Lisa">
-          <h3 class="visiting__block visiting__name">Mona Lisa</h3>
+          <h3 class="visiting__block visiting__name visiting__name_ls">Mona Lisa</h3>
 
           <div class="visiting__underline"></div>
 
@@ -124,7 +191,7 @@
 
         <a class="visiting__item" target="_blank" rel="noopener" href="./tours/tour6.html">
           <img class="visiting__image" src="assets/img/virtual-tour/night-palace.jpg" alt="Night palace">
-          <h3 class="visiting__block visiting__name">Night Palace</h3>
+          <h3 class="visiting__block visiting__name visiting__name_ls">Night Palace</h3>
 
           <div class="visiting__underline"></div>
 
@@ -143,30 +210,34 @@
 
           <div class="section__underline"></div>
 
-          <p class="explore__info">
+          <p class="explore__info explore__info_tablet">
             Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.
           </p>
 
-          <p class="explore__info">
+          <p class="explore__info explore__info_tablet">
             It was cleaned in 1984 to remove a <span class="explore__info_yellow">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.
           </p>
 
-          <p class="explore__info">
+          <p class="explore__info explore__info_hidden">
             The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.
           </p>
         </div>
 
         <div class="restore__example">
-          <div class="image-slider">
-            
-            <div id="top-image">
-              <img src="assets/img/explore-slider/after.jpg" alt="Before" />
-              
+          <div id="example">
+            <div class="before-after">
+              <div class="slider-line">
+                <span></span>
+              </div>
+
+              <div class="photo before">
+                <img src="assets/img/explore-slider/before.jpg" alt="Before">
+              </div>
+              <div class="photo after">
+                <img src="assets/img/explore-slider/after.jpg" alt="After">
+              </div>
+          <!-- <div class="drag-handler" draggable="true" style="left: 70%;"><div class="drag-element"></div></div></div></div> -->
             </div>
-            <img src="assets/img/explore-slider/before.jpg" alt="las meninas before" />
-            
-            <img class="explore__slider" src="assets/img/explore-slider/slider.png" alt="">
-            <!-- <input id="range-input" type="range" /> -->
           </div>
         </div>
       </div>
@@ -179,7 +250,7 @@
       <div class="video">
         <div class="journey__intro">
           <h2 class="journey__title section__title section__title_gold">Video journey</h2>
-          <p class="journey__info">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
+          <p class="journey__info journey__info_laptop">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
         </div>
 
         <div class="video__mock">
@@ -203,45 +274,45 @@
 
       <div class="journey-slider">
         <div class="journey-slides">
-          <iframe
-            width="452"
-            height="254"
-            src="https://www.youtube.com/embed/zp1BXPX8jcU"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          >
-          </iframe>
+          <div class="journey-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/zp1BXPX8jcU"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
 
-          <iframe
-            width="452"
-            height="254"
-            src="https://www.youtube.com/embed/Vi5D6FKhRmo"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          >
-          </iframe>
+          <div class="journey-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/Vi5D6FKhRmo"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
 
-          <iframe
-            width="452"
-            height="254"
-            src="https://www.youtube.com/embed/NOhDysLnTvY"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          >
-          </iframe>
+          <div class="journey-wrap journey-wrap_tablet">
+            <iframe
+              src="https://www.youtube.com/embed/NOhDysLnTvY"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
         </div>
 
         <div class="jorney-counter">
-          <div class="jorney-counter__arrow jorney-counter__arrow_left"></div>
+          <button class="jorney-counter__arrow jorney-counter__arrow_left"></button>
           <div class="journey-item journey-item_active"></div>
           <div class="journey-item"></div>
           <div class="journey-item"></div>
           <div class="journey-item"></div>
           <div class="journey-item"></div>
-          <div class="jorney-counter__arrow jorney-counter__arrow_right"></div>
+          <button class="jorney-counter__arrow jorney-counter__arrow_right"></button>
         </div>
       </div>
     </div>
@@ -268,8 +339,10 @@
       <div class="section__underline"></div>
 
       <div class="tickets__wrap">
-        <img src="./assets/img/tickets.jpg" alt="venus aeneas shield">
-
+        <div class="tickets__image">
+          <div class="tickets__img"></div>
+          <!-- <img class="tickets__pic" src="./assets/img/tickets.jpg" alt="venus aeneas shield"> -->
+        </div>
         <div class="tickets__order">
           <div class="tickets__type">
             <p class="tickets__step">Ticket Type</p>
@@ -316,9 +389,9 @@
               </div>
             </div>
 
-            <div class="tickets__step tickets__step_amount tickets__step_total">Total €220</div>
+            <div class="tickets__step tickets__step_amount tickets__step_total">Total € 220</div>
 
-            <button class="tickets__btn">Buy Now</button>
+            <button class="tickets__btn tickets__btn_sm">Buy Now</button>
           </div>
         </div>
       </div>
@@ -345,7 +418,8 @@
           <div class="contacts__item">mail: <a href="mailto:info@louvre.fr">info@louvre.fr</a></div>
         </div>
         <div class="contacts__map">
-          <div id='map'></div>
+          <!-- <div class="contacts__img" id=''></div> -->
+          <img class="contacts__img" src="./assets/img/Rectangle.jpg">
         </div>
       </div>
     </div>
@@ -354,36 +428,36 @@
   <footer class="footer section_dark">
     <div class="container">
       <div class="footer__info">
-        <a class="logo" href="#">
+        <a class="footer__item logo" href="#">
           <img src="./assets/img/svg/louvre-logo.svg" alt="Louvre">
           <div class="logo__title">louvre</div>
         </a>
-        <nav class="nav">
+        <nav class="footer__item nav">
           <ul class="footer__nav nav">
-            <li><a class="nav__item" href="#visiting">Visiting</a></li>
-            <li><a class="nav__item" href="#gallery">Gallery</a></li>
+            <li class="nav__wrap nav__wrap_vis"><a class="nav__item" href="#visiting">Visiting</a></li>
+            <li class="nav__wrap nav__wrap_gal"><a class="nav__item" href="#gallery">Gallery</a></li>
 
             
-            <li><a class="nav__item" href="#explore">Explore</a></li>
-            <li><a class="nav__item" href="#tickets">Tickets</a></li>
+            <li class="nav__wrap nav__wrap_exp"><a class="nav__item" href="#explore">Explore</a></li>
+            <li class="nav__wrap nav__wrap_tic"><a class="nav__item" href="#tickets">Tickets</a></li>
 
-            <li><a class="nav__item" href="#journey">Video</a></li>
-            <li><a class="nav__item" href="#contacts">Contacts</a></li>
+            <li class="nav__wrap nav__wrap_vid"><a class="nav__item" href="#journey">Video</a></li>
+            <li class="nav__wrap nav__wrap_con"><a class="nav__item" href="#contacts">Contacts</a></li>
           </ul>
         </nav>
 
-        <ul class="footer-links">
-          <li><a href="https://www.youtube.com/user/louvre" class="icon icon-youtube" rel="noopener"></a></li>
-          <li><a href="https://www.instagram.com/museelouvre/" class="icon icon-instagram" rel="noopener"></a></li>
-          <li><a href="https://www.facebook.com/museedulouvre" class="icon icon-facebook" rel="noopener"></a></li>
-          <li><a href="http://twitter.com/museelouvre" class="icon icon-twitter" rel="noopener"></a></li>
-          <li><a href="https://www.pinterest.fr/museedulouvre/" class="icon icon-pin" rel="noopener"></a></li>
+        <ul class="footer__item footer-links">
+          <li class="qw"><a href="https://www.youtube.com/user/louvre" class="icon icon-youtube" rel="noopener"></a></li>
+          <li class="qw"><a href="https://www.instagram.com/museelouvre/" class="icon icon-instagram" rel="noopener"></a></li>
+          <li class="qw"><a href="https://www.facebook.com/museedulouvre" class="icon icon-facebook" rel="noopener"></a></li>
+          <li class="qw"><a href="http://twitter.com/museelouvre" class="icon icon-twitter" rel="noopener"></a></li>
+          <li class="qw"><a href="https://www.pinterest.fr/museedulouvre/" class="icon icon-pin" rel="noopener"></a></li>
         </ul>
       </div>
 
 
     </div>
-    <hr style="color: aliceblue;">
+    <hr style="color: #fff;">
 
     <div class="container footer__cred">
       <div class="copyright">© 2021</div>
@@ -530,21 +604,6 @@
           </div>
 
           <div class="card">
-            <div class="card-back">
-              <div class="black-line"></div>
-            
-              <div class="card__item card__item_cvc">
-                <label class="card-label card-label_cvc" for="card-number">CVC/CVV</label>
-                <input class="card__cvc" type="text" name="card-number" id="card-number" />
-                <div class="card-label card-label_more">
-                  The last<br>
-                  3 or 4 digits
-                  on back<br>
-                  of the card
-                </div>
-              </div>
-            </div>
-
             <div class="card-front">
               <div class="card__item">
                 <label class="card-label" for="card-number">Card number</label>
@@ -586,6 +645,21 @@
                 <input class="card__holder" type="text" name="card-number" />
               </div>
             </div>
+
+            <div class="card-back">
+              <div class="black-line"></div>
+            
+              <div class="card__item card__item_cvc">
+                <label class="card-label card-label_cvc" for="card-number">CVC/CVV</label>
+                <input class="card__cvc" type="text" name="card-number" id="card-number" />
+                <div class="card-label card-label_more">
+                  The last<br>
+                  3 or 4 digits
+                  on back<br>
+                  of the card
+                </div>
+              </div>
+            </div>
           </div>
         
         <button type="submit" class="card__btn_book">Book</button>
@@ -595,7 +669,7 @@
     </form>
   </div>
 
-
   <div class="cover hidden" id="cover"></div>
+
 </body>
 </html>
