@@ -1,25 +1,75 @@
 
-
 // ------------------------------
 
 let burger = document.querySelector('.burger');
 let aside = document.querySelector('.aside');
+let asideitem = document.querySelector('.aside__name');
 
-burger.addEventListener('click', showOpen);
+// aside.addEventListener('click', toggleAside1);
+burger.addEventListener('click', toggleAside);
+document.addEventListener('click', toggleAside2);
 
-function showOpen() {
-  console.log(this)
-  this.classList.toggle('open');
-  aside.classList.toggle('open');
-  
+function toggleAside2(e) {
+  let parent = e.target.closest('.aside');
+  let parent1 = e.target.closest('.aside__item');
+
+  if((parent1 != null || parent === null) && aside.classList.contains('open')) {
+    burger.classList.toggle('open');
+    aside.classList.toggle('open');
+  }
 }
 
-// -------------------------------
+function toggleAside1(e) {
+  console.log(e)
 
+  let parent = e.target.closest('.aside__item');
+
+  if(parent) {
+    burger.classList.toggle('open');
+    aside.classList.toggle('open');
+  }
+}
+
+function toggleAside(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  this.classList.toggle('open');
+  aside.classList.toggle('open');
+}
 
 
 const progress = document.querySelector('.range');
 const progress1 = document.querySelector('.video__volume');
+
+
+const updateProgress = e => {
+  console.log(document.documentElement.clientWidth)
+  let w = document.documentElement.clientWidth
+
+  if(w = 1024) {
+    progress.value = 40;
+    progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${40}%, #c4c4c4 ${40}%, #c4c4c4 100%)`
+
+    progress1.value = 38;
+    progress1.style.background = `linear-gradient(to right, #710707 0%, #710707 ${38}%, #c4c4c4 ${38}%, #c4c4c4 100%)`
+  }
+
+  if(w = 768) {
+    progress1.value = 31;
+    progress1.style.background = `linear-gradient(to right, #710707 0%, #710707 ${31}%, #c4c4c4 ${31}%, #c4c4c4 100%)`
+  }
+
+  if(w = 420) {
+    progress1.value = 40;
+    progress1.style.background = `linear-gradient(to right, #710707 0%, #710707 ${40}%, #c4c4c4 ${40}%, #c4c4c4 100%)`
+  }
+};
+
+window.addEventListener("load", updateProgress);
+window.addEventListener("resize", updateProgress);
+
+
 
 progress.addEventListener('input', function() {
   const value = this.value;

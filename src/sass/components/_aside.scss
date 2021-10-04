@@ -119,29 +119,28 @@
 }
 
 .aside__name {
+  flex-basis: 112px;
 
-  flex-basis: 60%;
+  // @include tablet {
+  //   flex-basis: 17%;
+  // }
 
-  @include tablet {
-    flex-basis: 17%;
-  }
-
-  @include mobile {
-    flex-basis: 37%;
-  }
+  // @include mobile {
+  //   flex-basis: 37%;
+  // }
 
 }
 
 .aside__wrap {
-  flex-basis: 40%;
+  // flex-basis: 40%;
 
-  @include tablet {
-    flex-basis: 83%;
-  }
+  // @include tablet {
+  //   flex-basis: 83%;
+  // }
 
-  @include mobile {
-    flex-basis: 63%;
-  }
+  // @include mobile {
+  //   flex-basis: 63%;
+  // }
 }
 
 .head .logo {
