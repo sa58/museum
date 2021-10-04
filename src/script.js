@@ -3,7 +3,7 @@ console.log(`1024 (4) Блок header
 1024 (4) Секция Visiting
 1024 (4) Секция Explore
 1024 (4) Секция Video
-1024 (4 - 1) Секция Gallery - нет тени, некорректный отступ
+1024 (4 - 2) Секция Gallery - нет тени, некорректный отступ
 1024 (4) Секция Tickets
 1024 (4) Форма покупки билетов
 1024 (4) Секция Contacts
@@ -50,7 +50,8 @@ console.log(`1024 (4) Блок header
 ----------------------------------
 (0) Оптимизация скорости загрузки страницы
 ----------------------------------
-Итого 147`)
+Возможно есть что-то еще...
+Итого 146`)
 // ------------------------------
 
 let burger = document.querySelector('.burger');
@@ -63,7 +64,6 @@ let wallElements = arr.map(el => document.querySelector(el));
 
 const toogleWallAside = () => {
   wallElements.forEach(el => {
-    console.log(el)
     el.classList.toggle('hidden');
   })
 }
