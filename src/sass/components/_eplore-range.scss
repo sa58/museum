@@ -1,130 +1,8 @@
-.restore__example {
-  .image-slider {
-    position: relative;
-  }
-
-  .image-slider > div {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    max-width: 56px;
-    overflow: hidden;
-  }
-
-  .image-slider img {
-    display: block;
-    user-select: none;
-    box-sizing: border-box;
-
-    @include laptop {
-      // max-width: 100%;
-    }
-
-    @include mobile {
-      width: 100%;
-
-      &.explore__slider {
-        display: none;
-      }
-    }
-    
-
-  }
-
-  .image-slider input {
-    margin: 0;
-    position: absolute;
-    top: 0;
-    left: 52%;
-    bottom: 10px;
-    height: 100%;
-    // width: 120%;
-    background: transparent;
-  }
-
-  .image-slider input::before {
-    content: '';
-    height: 100%;
-    width: 5px;
-    background: white;
-  }
-
-  input[type='range'],
-  input[type='range']::-webkit-slider-runnable-track,
-  input[type='range']::-webkit-slider-thumb {
-    -webkit-appearance: none;
-  }
-
-  input[type="range"]::-webkit-slider-thumb {
-    width: 40px;
-    height: 40px;
-    border: 4px solid $color-white;
-    border-radius: 100%;
-    background: transparent;
-    background-blend-mode: overlay;
-    // padding: ;
-    z-index: 45;
-    cursor: ew-resize;
-  }
-
-  .explore__slider {
-    position: absolute;
-    height: 700px;
-    width: 39px;
-    top: 0;
-    left: 58%;
-    z-index: 150;
-
-    @include mobile {
-      width: 100%;
-
-      #explore__slider {
-        display: none;
-      }
-    }
-  }
-}
-
-#top-image img {
-  @include mobile {
-    width: 380px;
-  }
-}
-
-// -------------------------------------
-.before-after {
-  position: relative;
-  // display: inline-block;
-  // vertical-align: top;
-  // user-select: none;
-}
-
-.before-after .photo img {
-  // display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.before-after .photo.before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  transform: translate(-39%);
-}
-
-.before-after .photo.before img {
-  transform: translate(39%);
-}
-
 .slider-line {
   width: 4px;
   height: 100%;
   position: absolute;
-  left: 60.85%;
+  left: 47%;
   pointer-events: none;
 
   @include mobile {
@@ -194,4 +72,35 @@
 .slider-line span::after {
   left: 60%;
   border-top-color: #fff;
+}
+
+#example {
+  position: relative;
+  max-width: 450px;
+}
+
+.before {
+  position: absolute;
+  top: 0;
+  width: 47%;
+  overflow: hidden;
+}
+
+.restore__example input {
+  width: 100%;
+  outline: none;
+  background: none;
+  -webkit-appearance: none;
+  position: absolute;
+  z-index: 50;
+  height: 100%;
+}
+
+.restore__example input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  display: inline;
+}
+
+.photo img {
+  max-width: 450px;
 }

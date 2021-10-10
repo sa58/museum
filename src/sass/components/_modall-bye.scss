@@ -212,6 +212,7 @@ body.not-scrollable {
   width: 15px;
   height: 15px;
   align-self: center;
+  background-size: 100% 100%;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator,
@@ -231,14 +232,7 @@ input[type=date]:invalid + span:after {
   top: 2px;
 }
 
-input[type=date]:focus:invalid + span:after,
-input[type=time]:focus:invalid + span:after {
-  display: none;
-}
 
-input:not(:focus):invalid {
-  color: transparent;
-}
 
 input[type=time]:invalid + span:after {
   content: "Time";
@@ -247,6 +241,14 @@ input[type=time]:invalid + span:after {
   top: 2px;
 }
 
+input[type=date]:focus:invalid + span:after,
+input[type=time]:focus:invalid + span:after {
+  display: none;
+}
+
+input:not(:focus):invalid {
+  color: transparent;
+}
 
 label.wrapper {
   align-self: flex-end;
@@ -318,6 +320,7 @@ label.wrapper {
   width: 15px;
   height: 15px;
   margin-right: 3px;
+  background-size: 100% 100%;
 }
 
 .select-ticket {
@@ -815,4 +818,36 @@ input[type=number] {
   background-color: $color-dark;
   color: $color-white;
   cursor: pointer;
+}
+
+.field-container.invalid {
+  border: 1px solid red;
+}
+
+.text_hidden {
+  display: none;
+}
+
+.text_invalid {
+  color: red;
+
+  @include font(Forum, small, 300, 0);
+}
+
+// .input__email
+
+.input__email:not(:focus):invalid {
+  color: #000;
+}
+
+.input_time:not(:focus):invalid {
+  color: unset;
+}
+
+.select-time {
+  width: 100%;
+}
+
+.field-container_time {
+  flex-basis: 42%;
 }

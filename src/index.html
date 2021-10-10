@@ -107,13 +107,18 @@
 
 
         </div>
-      <div class="welcome__wall">
-
+        
+        
+        <div class="welcome__intro">
         <h2 class="welcome__title section__title section__title_light">Welcome <br> to the Louvre</h2>
 
         <div class="welcome__more">From the castle to the museum</div>
 
         <a class="welcome__href" target="_blank" href="./tours/discover.html">Discover the Louvre</a>
+        </div>
+      <div class="welcome__wall">
+       
+
 
         <div class="welcome__slider">
           <div class="welcome__counter">
@@ -131,6 +136,23 @@
           <div class="carousel-arrows">
             <button class="arrow arrow_left"></button>
             <button class="arrow arrow_right"></button>
+          </div>
+        </div>
+        <div class="welcome__carousel">
+          <div class="carousel__item active">
+            <img src="./assets/img/welcome-slider/1.jpg">
+          </div>
+          <div class="carousel__item">
+            <img src="./assets/img/welcome-slider/2.jpg">
+          </div>
+          <div class="carousel__item">
+            <img src="./assets/img/welcome-slider/3.jpg">
+          </div>
+          <div class="carousel__item">
+            <img src="./assets/img/welcome-slider/4.jpg">
+          </div>
+          <div class="carousel__item">
+            <img src="./assets/img/welcome-slider/5.jpg">
           </div>
         </div>
       </div>
@@ -230,10 +252,11 @@
 
         <div class="restore__example">
           <div id="example">
-            <div class="before-after">
               <div class="slider-line">
                 <span></span>
               </div>
+                <input type="range" min="0" max="100" value="50">
+
 
               <div class="photo before">
                 <img src="assets/img/explore-slider/before.jpg" alt="Before">
@@ -241,8 +264,7 @@
               <div class="photo after">
                 <img src="assets/img/explore-slider/after.jpg" alt="After">
               </div>
-          <!-- <div class="drag-handler" draggable="true" style="left: 70%;"><div class="drag-element"></div></div></div></div> -->
-            </div>
+           
           </div>
         </div>
       </div>
@@ -259,22 +281,32 @@
         </div>
 
         <div class="video__mock">
-          <img class="video__image" src="./assets/img/video/video-mock.png" alt="video mock">
-          <button class="video__btn_big"></button>
-        </div>
 
-        <div class="video__settings">
-          <div class="video__state">
-            <button class="video__btn video__btn_pause"></button>
+          <video
+            class="video__image player"
+            poster="./assets/video/poster0.jpg"
+            src="./assets/video/video0.mp4"
+          >
+          </video>
+
+          <button class="video__btn_big"></button>
+
+          <div class="video__settings">
+            <div class="video__state">
+              <button class="video__btn video__btn_pause"></button>
+            </div>
+
+            <input class="range video__progress" type="range" value="0" min="0" max="100" step="0.1">
+
+            <button class="video__btn video__btn_volume"></button>
+            <input class="range video__volume" type="range" value="0.5" min="0" max="1" step="0.1">
+
+            <button class="video__btn video__btn_full"></button>
           </div>
 
-          <input class="range video__progress" type="range" value="53" min="0" max="100" step="1">
-
-          <button class="video__btn video__btn_volume"></button>
-          <input class="range video__volume" type="range" value="43" min="0" max="100" step="1">
-
-          <button class="video__btn video__btn_full"></button>
         </div>
+
+
       </div>
 
       <div class="journey-slider">
@@ -356,20 +388,20 @@
             <p class="tickets__step">Ticket Type</p>
 
             <label class="tickets__item tickets__type_align">
-              <input type="radio" name="type" class="check-custom">
+              <input type="radio" name="type" data-price="20" class="check-custom" checked>
 
               <span class="check-toggle"></span>
               Permanent exhibition
             </label>
 
             <label class="tickets__item tickets__type_align">
-              <input type="radio" name="type" class="check-custom">
+              <input type="radio" name="type" data-price="25" class="check-custom">
 
               <span class="check-toggle"></span>
               Temporary exhibition
             </label>
             <label class="tickets__item tickets__type_align">
-              <input type="radio" name="type" class="check-custom">
+              <input type="radio" name="type" data-price="40" class="check-custom">
 
               <span class="check-toggle"></span>
               Combined Admission
@@ -382,22 +414,22 @@
             <div class="tickets__item tickets__amount_align">
               <p class="tickets-age">Basic 18+</p>
               <div class="amount">
-                <button class="amount__item amount__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
-                <input class="amount__item amount__input" type="number" min="0" max="20" value="1" readonly>
-                <button class="amount__item amount__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                <button class="amount__item amount__btn" data-action="basic" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                <input class="amount__item amount__input amount__input_basic" type="number" min="0" max="20" value="0" readonly>
+                <button class="amount__item amount__btn" data-action="basic" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
               </div>
             </div>
 
             <div class="tickets__item tickets__amount_align">
               <p class="tickets-age">Senior 65+</p>
               <div class="amount">
-                <button class="amount__item amount__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
-                <input class="amount__item amount__input" type="number" min="0" max="20" value="1" readonly>
-                <button class="amount__item amount__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                <button class="amount__item amount__btn" data-action="senior" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                <input class="amount__item amount__input amount__input_senior" type="number" min="0" max="20" value="0" readonly>
+                <button class="amount__item amount__btn" data-action="senior" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
               </div>
             </div>
 
-            <div class="tickets__step tickets__step_amount tickets__step_total">Total € 220</div>
+            <div class="tickets__step tickets__step_amount tickets__step_total">Total € <span class="tickets__total">0</span></div>
 
             <button class="tickets__btn tickets__btn_sm">Buy Now</button>
           </div>
@@ -476,7 +508,7 @@
   </footer>
 
 
-  <div class="book__modal hidden">
+  <div class="book__modal">
     <form>
       <div class="book__btn_close"></div>
       <div class="book__wrapper">
@@ -493,7 +525,7 @@
               <div class="icn-date"></div>
               <label class="wrapper">
                 <input
-                  class="input__date"
+                  class="input__date input_date"
                   type="date"
                   required="required" 
                 />
@@ -502,41 +534,39 @@
             </div>
 
 
-            <div class="input-container date">
-              <div class="icn-time"></div>
-              <label class="wrapper">
-                <input
-                  class="input__date"
-                  type="time"
-                  required="required" 
-                />
-                <span></span>
-              </label>
+            <div class="field-container name field-container_time">
+              <span class="icn-time"></span>
+              <select class="input-field select-time">
+              </select>
             </div>
 
 
 
             <div class="field-container name">
               <span class="icn-name"></span>
-              <input class="input-field" type="text" placeholder="Name" name="name">
+              <input class="input-field input__name" type="text" placeholder="Name" name="name">
             </div>
+            <span class="text_hidden text_invalid">Invalid name</span>
 
             <div class="field-container name">
               <span class="icn-email"></span>
-              <input class="input-field" type="email" placeholder="E-mail" name="name">
+              <input class="input-field input__email" type="email" placeholder="E-mail" name="name">
             </div>
+            <span class="text_hidden text_invalid">Invalid name</span>
 
             <div class="field-container name">
               <span class="icn-phone"></span>
-              <input class="input-field" type="tel" placeholder="Phone" name="phone">
+              <input class="input-field input__phone" type="text" placeholder="Phone" name="phone">
             </div>
+            <span class="text_hidden text_invalid">Invalid name</span>
+
 
             <div class="field-container name">
               <span class="icn-ticket"></span>
               <select class="input-field select-ticket">
-                <option value="" disabled selected>Ticket Type</option>
-                <option>Пункт 1</option>
-                <option>Пункт 2</option>
+                <option value="0">Permanent exhibition</option>
+                <option value="1">Temporary exhibition</option>
+                <option value="2">Combined Admission</option>
               </select>
             </div>
 
@@ -549,9 +579,9 @@
                 <div class="age-quantity">
 
                   <div class="entry__amount">
-                    <button class="entry__item entry__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
-                    <input class="entry__item entry__input" type="number" min="0" max="20" value="2" readonly>
-                    <button class="entry__item entry__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                    <button data-action="basic" class="entry__item entry__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                    <input class="entry__item entry__input entry__input_basic" type="number" min="0" max="20" value="0" readonly>
+                    <button data-action="basic" class="entry__item entry__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                   </div>
     
                 </div>
@@ -560,9 +590,9 @@
                 <div class="age">Senior 65+ (10 €)</div>
                 <div class="age-quantity">
                   <div class="entry__amount">
-                    <button class="entry__item entry__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
-                    <input class="entry__item entry__input" type="number" min="0" max="20" value="2" readonly>
-                    <button class="entry__item entry__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                    <button data-action="senior" class="entry__item entry__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                    <input class="entry__item entry__input entry__input_senior" type="number" min="0" max="20" value="0" readonly>
+                    <button data-action="senior" class="entry__item entry__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                   </div>
                 </div>
               </div>
@@ -578,37 +608,37 @@
     
               <p class="overview__item">
                 <span class="ico ico-date"></span>
-                <span class="overview__content">Friday, August 19</span>
+                <span class="overview__content overview_date"></span>
               </p>
     
               <p class="overview__item">
                 <span class="ico ico-time"></span>
-                <span class="overview__content">16 : 30</span>
+                <span class="overview__content overview_time">16 : 30</span>
               </p>
     
               <p class="overview__item">
                 <span class="ico ico-type"></span>
-                <span class="overview__content">Temporary exhibition</span>
+                <span class="overview__content overview_type">Temporary exhibition</span>
               </p>
             </div>
 
             <div class="overview__image"></div>
           </div>
 
-          <div class="price price_first">
-            <div class="price-age"><span class="num">2</span>Basic (20 €)</div>
-            <div class="price-sum">40 €</div>
+          <div class="price price_first price_basic">
+            <div class="price-age"><span class="num">0</span>Basic (20 €)</div>
+            <div class="price-sum"><span class="sum">0</span> €</div>
           </div>
 
-          <div class="price">
-            <div class="price-age"><span class="num">2</span>Senior (10 €)</div>
-            <div class="price-sum">20 €</div>
+          <div class="price price_senior">
+            <div class="price-age"><span class="num">0</span>Senior (10 €)</div>
+            <div class="price-sum"><span class="sum">0</span> €</div>
           </div>
 
           <div class="section__underline"></div>
           <div class="book__total">
             <div class="total__title">Total</div>
-            <div class="total__price">60 €</div>
+            <div class="total__price"><span class="total__sum">60</span> €</div>
           </div>
 
           <div class="card">
@@ -677,7 +707,9 @@
     </form>
   </div>
 
+  
   <div class="cover hidden" id="cover"></div>
 
+  <script src='./script.js' type="module"></script>
 </body>
 </html>

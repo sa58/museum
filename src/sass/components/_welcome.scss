@@ -1,32 +1,36 @@
 .welcome__wall {
+  overflow: hidden;
   position: relative;
-  max-width: 1920px;
-  height: 810px;
-  margin: 0 auto;
-  background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(/src/assets/img/welcome-slider/1.jpg);
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: 1000px 750px;
+  /* max-width: 1000px; */
+  float: right;
+  // position: relative;
+  // max-width: 1920px;
+  // height: 810px;
+  // margin: 0 auto;
+  background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
+  // background-position: top right;
+  // background-repeat: no-repeat;
+  // background-size: 1000px 750px;
 
-  @include laptop {
-    // TODO
-    height: unset;
-    background-size: 700px 525px;
-  }
+  // @include laptop {
+  //   // TODO
+  //   height: unset;
+  //   background-size: 700px 525px;
+  // }
 
-  @include tablet {
-    height: 861px;
-    background-size: 728px 546px;
-    background-position-y: 215px;
-    background-position-x: center;
-  }
+  // @include tablet {
+  //   height: 861px;
+  //   background-size: 728px 546px;
+  //   background-position-y: 215px;
+  //   background-position-x: center;
+  // }
 
-  @include mobile {
-    height: 546px;
-    background-size: 380px 285px;
-    background-position-y: 181px;
-    background-position-x: center;
-  }
+  // @include mobile {
+  //   height: 546px;
+  //   background-size: 380px 285px;
+  //   background-position-y: 181px;
+  //   background-position-x: center;
+  // }
 }
 
 .welcome__title {
@@ -120,4 +124,9 @@
 
 .welcome {
   position: relative;
+}
+
+.welcome__intro {
+  position: absolute;
+  z-index: 10;
 }

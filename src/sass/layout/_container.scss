@@ -7,6 +7,7 @@ html {
   max-width: $content-width;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 
   @include laptop {
     padding-right: 20px;
