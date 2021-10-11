@@ -5,17 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museum</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
   <link rel="icon" href="assets/favicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+  <script src="https://www.youtube.com/iframe_api"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;500;700&display=swap" rel="stylesheet">
   <link href="./assets/img/welcome-slider/1.jpg" rel="stylesheet">
 
-  <!-- <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-  <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' /> -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
 </head>
 <body>
 
@@ -106,30 +110,52 @@
 
 
         </div>
-      <div class="welcome__wall">
-
+        
+        
+        <div class="welcome__intro">
         <h2 class="welcome__title section__title section__title_light">Welcome <br> to the Louvre</h2>
 
         <div class="welcome__more">From the castle to the museum</div>
 
         <a class="welcome__href" target="_blank" href="./tours/discover.html">Discover the Louvre</a>
+        </div>
+      <div class="welcome__wall">
+       
+
 
         <div class="welcome__slider">
           <div class="welcome__counter">
-            <div>01</div>
+            <div class="welcome__num">01</div>
             <div>|</div>
             <div>05</div>
           </div>
           <div class="carousel">
-            <div class="carousel-item carousel-item_active"></div>
-            <div class="carousel-item"></div>
-            <div class="carousel-item"></div>
-            <div class="carousel-item"></div>
-            <div class="carousel-item"></div>
+            <div data-slide="0" class="carousel-item carousel-item_active"></div>
+            <div data-slide="1" class="carousel-item"></div>
+            <div data-slide="2" class="carousel-item"></div>
+            <div data-slide="3" class="carousel-item"></div>
+            <div data-slide="4" class="carousel-item"></div>
           </div>
           <div class="carousel-arrows">
             <button class="arrow arrow_left"></button>
             <button class="arrow arrow_right"></button>
+          </div>
+        </div>
+        <div class="welcome__carousel">
+          <div class="carousel__item active">
+            <img src="./assets/img/welcome-slider/1.jpg">
+          </div>
+          <div class="carousel__item">
+            <img src="./assets/img/welcome-slider/2.jpg">
+          </div>
+          <div class="carousel__item">
+            <img src="./assets/img/welcome-slider/3.jpg">
+          </div>
+          <div class="carousel__item">
+            <img src="./assets/img/welcome-slider/4.jpg">
+          </div>
+          <div class="carousel__item">
+            <img src="./assets/img/welcome-slider/5.jpg">
           </div>
         </div>
       </div>
@@ -229,10 +255,11 @@
 
         <div class="restore__example">
           <div id="example">
-            <div class="before-after">
               <div class="slider-line">
                 <span></span>
               </div>
+                <input type="range" min="0" max="100" value="50">
+
 
               <div class="photo before">
                 <img src="assets/img/explore-slider/before.jpg" alt="Before">
@@ -240,8 +267,6 @@
               <div class="photo after">
                 <img src="assets/img/explore-slider/after.jpg" alt="After">
               </div>
-          <!-- <div class="drag-handler" draggable="true" style="left: 70%;"><div class="drag-element"></div></div></div></div> -->
-            </div>
           </div>
         </div>
       </div>
@@ -258,25 +283,119 @@
         </div>
 
         <div class="video__mock">
-          <img class="video__image" src="./assets/img/video/video-mock.png" alt="video mock">
-          <button class="video__btn_big"></button>
-        </div>
 
-        <div class="video__settings">
-          <div class="video__state">
-            <button class="video__btn video__btn_pause"></button>
+          <video
+            class="video__image player"
+            poster="./assets/video/poster0.jpg"
+            src="./assets/video/video0.mp4"
+          >
+          </video>
+
+          <button class="video__btn_big"></button>
+
+          <div class="video__speed">1dsf</div>
+
+          <div class="video__settings">
+            <div class="video__state">
+              <button class="video__btn video__btn_pause"></button>
+            </div>
+
+            <input class="range video__progress" type="range" value="0" min="0" max="100" step="0.1">
+
+            <button class="video__btn video__btn_volume"></button>
+            <input class="range video__volume" type="range" value="0.5" min="0" max="1" step="0.1">
+
+            <button class="video__btn video__btn_full"></button>
           </div>
 
-          <input class="range video__progress" type="range" value="53" min="0" max="100" step="1">
-
-          <button class="video__btn video__btn_volume"></button>
-          <input class="range video__volume" type="range" value="43" min="0" max="100" step="1">
-
-          <button class="video__btn video__btn_full"></button>
         </div>
+
+
       </div>
 
-      <div class="journey-slider">
+      <div class="swiper-container">
+
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+    
+            <!-- Slides -->
+            <div class="swiper-slide">
+
+            <iframe
+              src="https://www.youtube.com/embed/zp1BXPX8jcU?version=3&enablejsapi=1"
+              title="YouTube video player"
+              allowfullscreen
+              loading="lazy"
+              data-item="0"
+              id="item0"
+            >
+            </iframe>
+
+            </div>
+            <div class="swiper-slide">
+
+            <iframe
+              src="https://www.youtube.com/embed/Vi5D6FKhRmo?version=3&enablejsapi=1"
+              title="YouTube video player"
+              allowfullscreen
+              loading="lazy"
+              data-item="1"
+            >
+            </iframe>
+            </div>
+
+            <div class="swiper-slide">
+              <iframe
+                src="https://www.youtube.com/embed/NOhDysLnTvY?version=3&enablejsapi=1"
+                title="YouTube video player"
+                allowfullscreen
+                loading="lazy"
+                data-item="2"
+              >
+              </iframe>
+            </div>
+
+            <div class="swiper-slide">
+              <iframe
+                id="33"
+                src="https://www.youtube.com/embed/aWmJ5DgyWPI?version=3&enablejsapi=1"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                data-item="3"
+              >
+              </iframe>
+            </div>
+
+            <div class="swiper-slide">
+              <iframe 
+                src="https://www.youtube.com/embed/2OR0OCr6uRE?version=3&enablejsapi=1"
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                data-item="4"
+              >
+            </iframe>
+            </div>
+    
+        </div>
+    
+   
+        <div class="jorney-counter_temp">
+          <button class="jorney-counter__arrow jorney-counter__arrow_left"></button>
+          <div class="jorney-counter">
+            <div class="journey-item journey-item_active"></div>
+            <div class="journey-item"></div>
+            <div class="journey-item"></div>
+            <div class="journey-item"></div>
+            <div class="journey-item"></div>
+          </div>
+          <button class="jorney-counter__arrow jorney-counter__arrow_right"></button>
+        </div>
+    </div>
+
+
+      <!-- <div class="journey-slider qqq">
         <div class="journey-slides">
           <div class="journey-wrap">
             <iframe
@@ -310,6 +429,17 @@
             >
             </iframe>
           </div>
+
+          <div class="journey-wrap journey-wrap_tablet">
+            <iframe
+              src="https://www.youtube.com/embed/NOhDysLnTvY"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            >
+            </iframe>
+          </div>
         </div>
 
         <div class="jorney-counter">
@@ -321,7 +451,7 @@
           <div class="journey-item"></div>
           <button class="jorney-counter__arrow jorney-counter__arrow_right"></button>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -355,20 +485,20 @@
             <p class="tickets__step">Ticket Type</p>
 
             <label class="tickets__item tickets__type_align">
-              <input type="radio" name="type" class="check-custom">
+              <input type="radio" name="type" data-price="20" class="check-custom" checked>
 
               <span class="check-toggle"></span>
               Permanent exhibition
             </label>
 
             <label class="tickets__item tickets__type_align">
-              <input type="radio" name="type" class="check-custom">
+              <input type="radio" name="type" data-price="25" class="check-custom">
 
               <span class="check-toggle"></span>
               Temporary exhibition
             </label>
             <label class="tickets__item tickets__type_align">
-              <input type="radio" name="type" class="check-custom">
+              <input type="radio" name="type" data-price="40" class="check-custom">
 
               <span class="check-toggle"></span>
               Combined Admission
@@ -381,22 +511,22 @@
             <div class="tickets__item tickets__amount_align">
               <p class="tickets-age">Basic 18+</p>
               <div class="amount">
-                <button class="amount__item amount__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
-                <input class="amount__item amount__input" type="number" min="0" max="20" value="1" readonly>
-                <button class="amount__item amount__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                <button class="amount__item amount__btn" data-action="basic" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                <input class="amount__item amount__input amount__input_basic" type="number" min="0" max="20" value="0" readonly>
+                <button class="amount__item amount__btn" data-action="basic" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
               </div>
             </div>
 
             <div class="tickets__item tickets__amount_align">
               <p class="tickets-age">Senior 65+</p>
               <div class="amount">
-                <button class="amount__item amount__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
-                <input class="amount__item amount__input" type="number" min="0" max="20" value="1" readonly>
-                <button class="amount__item amount__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                <button class="amount__item amount__btn" data-action="senior" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                <input class="amount__item amount__input amount__input_senior" type="number" min="0" max="20" value="0" readonly>
+                <button class="amount__item amount__btn" data-action="senior" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
               </div>
             </div>
 
-            <div class="tickets__step tickets__step_amount tickets__step_total">Total € 220</div>
+            <div class="tickets__step tickets__step_amount tickets__step_total">Total € <span class="tickets__total">0</span></div>
 
             <button class="tickets__btn tickets__btn_sm">Buy Now</button>
           </div>
@@ -425,8 +555,10 @@
           <div class="contacts__item">mail: <a href="mailto:info@louvre.fr">info@louvre.fr</a></div>
         </div>
         <div class="contacts__map">
-          <!-- <div class="contacts__img" id=''></div> -->
-          <img class="contacts__img" src="./assets/img/Rectangle.jpg">
+          <!-- <div class="contacts__map"> -->
+            <div id='map'></div>
+          <!-- </div> -->
+          <!-- <img class="contacts__img" src="./assets/img/Rectangle.jpg"> -->
         </div>
       </div>
     </div>
@@ -492,7 +624,7 @@
               <div class="icn-date"></div>
               <label class="wrapper">
                 <input
-                  class="input__date"
+                  class="input__date input_date"
                   type="date"
                   required="required" 
                 />
@@ -501,41 +633,40 @@
             </div>
 
 
-            <div class="input-container date">
-              <div class="icn-time"></div>
-              <label class="wrapper">
-                <input
-                  class="input__date"
-                  type="time"
-                  required="required" 
-                />
-                <span></span>
-              </label>
+            <div class="field-container name field-container_time">
+              <span class="icn-time"></span>
+              <select class="input-field select-time">
+              </select>
             </div>
 
 
 
             <div class="field-container name">
               <span class="icn-name"></span>
-              <input class="input-field" type="text" placeholder="Name" name="name">
+              <input class="input-field input__name" type="text" placeholder="Name" name="name">
             </div>
+            <span class="text_hidden text_invalid">Username must contain from 3 to 15 characters in English or in Russian</span>
 
             <div class="field-container name">
               <span class="icn-email"></span>
-              <input class="input-field" type="email" placeholder="E-mail" name="name">
+              <input class="input-field input__email" type="email" placeholder="E-mail" name="name">
             </div>
+            <span class="text_hidden text_invalid">e-mail should be of the form username@example.com</span>
 
             <div class="field-container name">
               <span class="icn-phone"></span>
-              <input class="input-field" type="tel" placeholder="Phone" name="phone">
+              <input class="input-field input__phone" type="text" placeholder="Phone" name="phone">
             </div>
+            <span class="text_hidden text_invalid">phone number must be no more than 10 digits
+            </span>
+
 
             <div class="field-container name">
               <span class="icn-ticket"></span>
               <select class="input-field select-ticket">
-                <option value="" disabled selected>Ticket Type</option>
-                <option>Пункт 1</option>
-                <option>Пункт 2</option>
+                <option value="0">Permanent exhibition</option>
+                <option value="1">Temporary exhibition</option>
+                <option value="2">Combined Admission</option>
               </select>
             </div>
 
@@ -544,24 +675,24 @@
               <div class="section__underline"></div>
 
               <div class="entry-type">
-                <div class="age age_first">Basic 18+ (20 €)</div>
+                <div class="age age_first">Basic 18+ (<span class="entry_basic">20</span> €)</div>
                 <div class="age-quantity">
 
                   <div class="entry__amount">
-                    <button class="entry__item entry__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
-                    <input class="entry__item entry__input" type="number" min="0" max="20" value="2" readonly>
-                    <button class="entry__item entry__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                    <button data-action="basic" class="entry__item entry__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                    <input class="entry__item entry__input entry__input_basic" type="number" min="0" max="20" value="0" readonly>
+                    <button data-action="basic" class="entry__item entry__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                   </div>
     
                 </div>
               </div>
               <div class="entry-quantity">
-                <div class="age">Senior 65+ (10 €)</div>
+                <div class="age">Senior 65+ (<span class="entry_senior">10</span> €)</div>
                 <div class="age-quantity">
                   <div class="entry__amount">
-                    <button class="entry__item entry__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
-                    <input class="entry__item entry__input" type="number" min="0" max="20" value="2" readonly>
-                    <button class="entry__item entry__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                    <button data-action="senior" class="entry__item entry__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
+                    <input class="entry__item entry__input entry__input_senior" type="number" min="0" max="20" value="0" readonly>
+                    <button data-action="senior" class="entry__item entry__btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                   </div>
                 </div>
               </div>
@@ -577,37 +708,37 @@
     
               <p class="overview__item">
                 <span class="ico ico-date"></span>
-                <span class="overview__content">Friday, August 19</span>
+                <span class="overview__content overview_date"></span>
               </p>
     
               <p class="overview__item">
                 <span class="ico ico-time"></span>
-                <span class="overview__content">16 : 30</span>
+                <span class="overview__content overview_time">16 : 30</span>
               </p>
     
               <p class="overview__item">
                 <span class="ico ico-type"></span>
-                <span class="overview__content">Temporary exhibition</span>
+                <span class="overview__content overview_type">Temporary exhibition</span>
               </p>
             </div>
 
             <div class="overview__image"></div>
           </div>
 
-          <div class="price price_first">
-            <div class="price-age"><span class="num">2</span>Basic (20 €)</div>
-            <div class="price-sum">40 €</div>
+          <div class="price price_first price_basic">
+            <div class="price-age"><span class="num">0</span>Basic (<span class="entry_basic"></span> €)</div>
+            <div class="price-sum"><span class="sum">0</span> €</div>
           </div>
 
-          <div class="price">
-            <div class="price-age"><span class="num">2</span>Senior (10 €)</div>
-            <div class="price-sum">20 €</div>
+          <div class="price price_senior">
+            <div class="price-age"><span class="num">0</span>Senior (<span class="entry_senior"></span> €)</div>
+            <div class="price-sum"><span class="sum">0</span> €</div>
           </div>
 
           <div class="section__underline"></div>
           <div class="book__total">
             <div class="total__title">Total</div>
-            <div class="total__price">60 €</div>
+            <div class="total__price"><span class="total__sum">60</span> €</div>
           </div>
 
           <div class="card">
@@ -676,8 +807,9 @@
     </form>
   </div>
 
+  
   <div class="cover hidden" id="cover"></div>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-  <script src="script.js"></script>
 </body>
 </html>

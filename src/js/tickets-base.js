@@ -150,40 +150,42 @@ function registerTicketsBase() {
 
   function setOrder() {
     let order = JSON.parse(localStorage.getItem('order'));
+    if(order) {
+      let x = Object.keys(prices).filter(el => prices[el] === +order.price);
 
-    let x = Object.keys(prices).filter(el => prices[el] === +order.price);
+      console.log(x)
+      types[x[0]].checked = true;
+  
+  
+      basic.value = order.bValue;
+      senior.value = order.sValue;
+  
+      totalEl.textContent = order.total1 + order.total2;
+  
+  
+      formSelect.value = x[0];
+      document.querySelector('.price_basic .num').textContent = order.bValue;
+      document.querySelector('.price_senior .num').textContent = order.sValue;
+  
+  
+      document.querySelector('.price_basic .sum').textContent = order.total2;
+      document.querySelector('.price_senior .sum').textContent = order.total1;
+      document.querySelector('.book__total .total__sum').textContent = order.total1 + order.total2;
+  
+      document.querySelector('.overview_type').textContent = typesE[x[0]];
+  
+      formInputS.value = order.sValue;
+      formInputB.value = order.bValue
+  
+      document.querySelectorAll('.entry_basic').forEach(el => {
+        el.textContent = prices[x[0]];
+      })
+  
+      document.querySelectorAll('.entry_senior').forEach(el => {
+        el.textContent = prices[x[0]] / 2;
+      })
+    }
 
-    console.log(x)
-    types[x[0]].checked = true;
-
-
-    basic.value = order.bValue;
-    senior.value = order.sValue;
-
-    totalEl.textContent = order.total1 + order.total2;
-
-
-    formSelect.value = x[0];
-    document.querySelector('.price_basic .num').textContent = order.bValue;
-    document.querySelector('.price_senior .num').textContent = order.sValue;
-
-
-    document.querySelector('.price_basic .sum').textContent = order.total2;
-    document.querySelector('.price_senior .sum').textContent = order.total1;
-    document.querySelector('.book__total .total__sum').textContent = order.total1 + order.total2;
-
-    document.querySelector('.overview_type').textContent = typesE[x[0]];
-
-    formInputS.value = order.sValue;
-    formInputB.value = order.bValue
-
-    document.querySelectorAll('.entry_basic').forEach(el => {
-      el.textContent = prices[x[0]];
-    })
-
-    document.querySelectorAll('.entry_senior').forEach(el => {
-      el.textContent = prices[x[0]] / 2;
-    })
   }
 
   function saveOrder(bv, sv) {

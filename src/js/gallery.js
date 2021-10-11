@@ -32,11 +32,54 @@ function registerGallery() {
 
   imgs.forEach(el => {
     const img = document.createElement('img');
-    img.classList.add('item')
+    img.classList.add('item');
+
+    img.classList.add('item_indented');
     img.src = el;
     img.alt = `galery1`;
     pictureInnerContainer.append(img);
   })
+
+
+
+  // function debounce(func, wait = 20, immediate = true) {
+  //   var timeout;
+  //   return function() {
+  //     var context = this, args = arguments;
+  //     var later = function() {
+  //       timeout = null;
+  //       if (!immediate) func.apply(context, args);
+  //     };
+  //     var callNow = immediate && !timeout;
+  //     clearTimeout(timeout);
+  //     timeout = setTimeout(later, wait);
+  //     if (callNow) func.apply(context, args);
+  //   };
+  // };
+
+  // const sliderImages = document.querySelectorAll('.item_indented');
+
+  // function checkSlide() {
+  //   sliderImages.forEach(sliderImage => {
+  //     console.log(sliderImage)
+
+  //     // half way through the image
+  //     const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+  //     // bottom of the image
+  //     const imageBottom = sliderImage.offsetTop + sliderImage.height;
+  //     const isHalfShown = slideInAt > sliderImage.offsetTop;
+  //     const isNotScrolledPast = window.scrollY < imageBottom;
+  //     if (isNotScrolledPast) {
+  //       sliderImage.classList.add('active');
+  //     } else {
+  //       sliderImage.classList.remove('active');
+  //     }
+  //   });
+  // }
+
+  // window.addEventListener('scroll', debounce(checkSlide));
+
+
 }
 
 export { registerGallery }

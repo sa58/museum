@@ -26,9 +26,6 @@ function registerCustomVideoPlayer() {
   // });
 
 
-
-  
-
   video.addEventListener('click', togglePlayVideo);
   btnPlayBase.addEventListener('click', togglePlayVideo);
   btnPlaySmall.addEventListener('click', togglePlay1);
@@ -41,46 +38,47 @@ function registerCustomVideoPlayer() {
   let poster = video.poster;
 
 
-  document.addEventListener('keydown', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if(e.code === 'Space') {
-      togglePlayVideo();
-    }
+    document.addEventListener('keydown', (e) => {
+      e.stopPropagation();
 
-    if(e.code === 'KeyM') {
-      // TODO
-      if(btnVolume.classList.contains('video__btn_mute')) {
-        btnVolume.classList.toggle('video__btn_mute');
-        video.volume = tempVolume;
-
-        const val = tempVolume * 100;
-
-        volume.style.background = `linear-gradient(to right, #710707 0%, #710707 ${val}%, #c4c4c4 ${val}%, #c4c4c4 100%)`;
-        volume.value = tempVolume;
-      } else {
-        btnVolume.classList.toggle('video__btn_mute');
-        tempVolume = video.volume;
-
-        video.volume = 0;
-        volume.style.background = `linear-gradient(to right, #710707 0%, #710707 ${0}%, #c4c4c4 ${0}%, #c4c4c4 100%)`;
-        volume.value = 0;
+      
+      if(e.code === 'Space') {
+        togglePlayVideo();
       }
-    }
 
-    if(e.code === 'KeyF') {
-      setFullSize();
-    }
+      if(e.code === 'KeyM') {
+        // TODO
+        if(btnVolume.classList.contains('video__btn_mute')) {
+          btnVolume.classList.toggle('video__btn_mute');
+          video.volume = tempVolume;
 
-    if(e.code === 'Comma') {
-      if (e.shiftKey) speedUp();
-    }
+          const val = tempVolume * 100;
 
-    if(e.code === 'Period') {
-      if (e.shiftKey) speedDown();
-    }
+          volume.style.background = `linear-gradient(to right, #710707 0%, #710707 ${val}%, #c4c4c4 ${val}%, #c4c4c4 100%)`;
+          volume.value = tempVolume;
+        } else {
+          btnVolume.classList.toggle('video__btn_mute');
+          tempVolume = video.volume;
 
-  });
+          video.volume = 0;
+          volume.style.background = `linear-gradient(to right, #710707 0%, #710707 ${0}%, #c4c4c4 ${0}%, #c4c4c4 100%)`;
+          volume.value = 0;
+        }
+      }
+
+      if(e.code === 'KeyF') {
+        setFullSize();
+      }
+
+      if(e.code === 'Comma') {
+        if (e.shiftKey) speedUp();
+      }
+
+      if(e.code === 'Period') {
+        if (e.shiftKey) speedDown();
+      }
+
+    });
 
   function speedUp() {
     video.playbackRate += 0.25;

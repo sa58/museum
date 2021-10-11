@@ -1,4 +1,5 @@
 function registerFormValidation() {
+  // TODO: refactor
 
   let name = document.querySelector('.input__name');
   let email = document.querySelector('.input__email');
@@ -35,9 +36,9 @@ function registerFormValidation() {
   phone.addEventListener('change', e => {
     console.log(e.target.value)
     let reg = /^\d{1,10}$/;
-    let reg1 = /^\d{2|3}\s?\d{2|3}\s?\{d}{2|3}$/
+    // let reg1 = /^\d{2|3}\s?\d{2|3}\s?\{d}{2|3}$/
 
-    if(e.target.value.match(reg1) === null) {
+    if(e.target.value.match(reg) === null) {
       e.target.closest('.field-container').classList.add('invalid')
       e.target.closest('.field-container').nextElementSibling.classList.remove('text_hidden')
     }
