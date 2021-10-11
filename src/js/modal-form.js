@@ -20,7 +20,6 @@ function registerModalForm() {
   }
 
   timeSelect.addEventListener('change', (e) => {
-    console.log(e.target.value)
     document.querySelector('.overview_time').textContent = e.target.value;
   })
 

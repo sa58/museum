@@ -1,5 +1,4 @@
 function registerModal() {
-  console.log('-----------------')
   const cover = document.getElementById('cover');
   const modalIconClose = document.querySelector('.book__btn_close');
   const btnDonateForVol = document.querySelector('.tickets__btn');

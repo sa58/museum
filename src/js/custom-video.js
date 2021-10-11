@@ -217,6 +217,7 @@ function registerCustomVideoPlayer() {
 
   function handleProgress() {
     if(video.currentTime === 0) {
+
       if(video.poster !== poster) {
         poster = video.poster;
         btnPlayBase.classList.remove('btn_hidden');
@@ -234,6 +235,11 @@ function registerCustomVideoPlayer() {
         console.log(btnPlayBase.classList)
         btnPlayBase.classList.remove('btn_hidden');
         btnPlaySmall.classList.remove('video__btn_pausep');
+
+        video.currentTime = 0;
+        progress.value = 0;
+        progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${0}%, #c4c4c4 ${0}%, #c4c4c4 100%)`
+
       } else {
         progress.value = percent;
         progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${percent}%, #c4c4c4 ${percent}%, #c4c4c4 100%)`

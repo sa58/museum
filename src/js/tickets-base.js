@@ -77,6 +77,9 @@ function registerTicketsBase() {
       document.querySelector('.price_basic .num').textContent = basic.value;
       document.querySelector('.price_senior .num').textContent = senior.value;
 
+      document.querySelector('.entry__input_basic').value = basic.value;
+      document.querySelector('.entry__input_senior').value = senior.value;
+
       document.querySelector('.price_basic .sum').textContent = total2;
       document.querySelector('.price_senior .sum').textContent = total1;
       document.querySelector('.book__total .total__sum').textContent = total1 + total2;
@@ -153,7 +156,6 @@ function registerTicketsBase() {
     if(order) {
       let x = Object.keys(prices).filter(el => prices[el] === +order.price);
 
-      console.log(x)
       types[x[0]].checked = true;
   
   
