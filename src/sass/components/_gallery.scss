@@ -17,66 +17,71 @@
 
 .item {
   display: block;
-  width: calc(33.3% - 24px);
+  width: 100%;
+  margin-bottom: 24PX;
 
-  @include tablet {
-    width: calc(50% - 12px);
-  }
+  // @include tablet {
+  //   width: calc(50% - 12px);
+  // }
 }
 
 // https://webformyself.com/css-masonry-s-pomoshhyu-flexbox-nth-child-i-order/
 
 .picture-inner-container {
-  display: flex;
-  flex-flow: column;
-  flex-wrap: wrap;
-  align-content: space-between;
-  /* Для контейнера нужна фиксированная высота, и он 
-   * должен быть выше самого высокого элемента. */
+  columns: 3;
   height: calc(570px * 5 + 24px * 3);
-  row-gap: 24px;
+  column-gap: 24px;
 
-  @include laptop {
-    height: calc(380px * 5 + 24px * 3);
-  }
+  // display: flex;
+  // flex-flow: column;
+  // flex-wrap: wrap;
+  // align-content: space-between;
+  // /* Для контейнера нужна фиксированная высота, и он 
+  //  * должен быть выше самого высокого элемента. */
+  // height: calc(570px * 5 + 24px * 3);
+  // row-gap: 24px;
 
-  @include tablet {
-    height: calc(352px * 10 + 50px);
-  }
+  // @include laptop {
+  //   height: calc(380px * 5 + 24px * 3);
+  // }
 
-  @include mobile {
-    height: calc(223px * 10 + 50px);
-  }
+  // @include tablet {
+  //   height: calc(352px * 10 + 50px);
+  // }
+
+  // @include mobile {
+  //   height: calc(223px * 10 + 50px);
+  // }
 }
 
 /* Реорганизуем элементы в 3 ряда */
-.item:nth-child(3n+1) {
-  order: 1;
-}
+// .item:nth-child(3n+1) {
+//   order: 1;
+// }
 
-.item:nth-child(3n+2) {
-  order: 2;
-}
+// .item:nth-child(3n+2) {
+//   order: 2;
+// }
 
-.item:nth-child(3n) {
-  order: 3;
+// .item:nth-child(3n) {
+//   order: 3;
 
-  @include tablet {
-    order: unset;
-  }
-}
+//   @include tablet {
+//     order: unset;
+//   }
+// }
 
-.item {
-  @include tablet {
-    &:nth-child(odd) {
-      order: 1;
-    }
+// .item {
+//   @include tablet {
+//     &:nth-child(odd) {
+//       order: 1;
+//     }
 
-    &:nth-child(even) {
-      order: 2;
-    }
-  }
-}
+//     &:nth-child(even) {
+//       order: 2;
+//     }
+//   }
+// }
 
 
 .item:nth-child(3) {

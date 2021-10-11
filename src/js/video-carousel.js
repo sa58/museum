@@ -42,6 +42,12 @@ function registerVideoCarousel() {
       video.poster = `./assets/video/poster${videoCarousel.realIndex}.jpg`;
       video.src = `./assets/video/video${videoCarousel.realIndex}.mp4`;
 
+
+        document.querySelectorAll('iframe').forEach(function(el) {
+          el.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}','*'
+          )
+        });
       // registerCustomVideoPlayer();
     }
     

@@ -1,3 +1,5 @@
+ // https://stackoverflow.com/questions/15164942/stop-embedded-youtube-iframe/30358006
+
 function registerCustomVideoPlayer() {
   const btnPlayBase = document.querySelector(".video__btn_big");
   const btnPlaySmall = document.querySelector(".video__btn_pause");
@@ -9,6 +11,23 @@ function registerCustomVideoPlayer() {
   const btnVolume = document.querySelector('.video__btn_volume');
 
   const speed = document.querySelector('.video__speed');
+
+  const iframes = document.querySelectorAll('.swiper-wrapper iframe');
+  // iframes.forEach(el => {
+  //   console.log(el)
+  //   el.document.addEventListener('click', (e) => {
+  //     console.log(e.target.dataset.item)
+  //   })
+  // })
+  // document.querySelectorAll('iframe').forEach(function(el) {
+  //   el.contentWindow.postMessage(
+  //     '{"event":"command","func":"pauseVideo","args":""}',
+  //     '*')
+  // });
+
+
+
+  
 
   video.addEventListener('click', togglePlayVideo);
   btnPlayBase.addEventListener('click', togglePlayVideo);
@@ -25,8 +44,6 @@ function registerCustomVideoPlayer() {
   document.addEventListener('keydown', (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log('+++++', e, e.code)
-
     if(e.code === 'Space') {
       togglePlayVideo();
     }

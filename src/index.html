@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museum</title>
-  
+
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
   <link href="./sass/style.css" rel="stylesheet">
@@ -14,11 +14,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+  <script src="https://www.youtube.com/iframe_api"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;500;700&display=swap" rel="stylesheet">
   <link href="./assets/img/welcome-slider/1.jpg" rel="stylesheet">
-  <!-- <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-  <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' /> -->
+
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
 </head>
 <body>
 
@@ -320,53 +322,61 @@
             <!-- Slides -->
             <div class="swiper-slide">
 
-              <iframe
-              src="https://www.youtube.com/embed/zp1BXPX8jcU"
+            <iframe
+              src="https://www.youtube.com/embed/zp1BXPX8jcU?version=3&enablejsapi=1"
               title="YouTube video player"
               allowfullscreen
               loading="lazy"
+              data-item="0"
+              id="item0"
             >
             </iframe>
 
             </div>
             <div class="swiper-slide">
 
-              <iframe
-              src="https://www.youtube.com/embed/Vi5D6FKhRmo"
+            <iframe
+              src="https://www.youtube.com/embed/Vi5D6FKhRmo?version=3&enablejsapi=1"
               title="YouTube video player"
               allowfullscreen
               loading="lazy"
+              data-item="1"
             >
             </iframe>
             </div>
 
             <div class="swiper-slide">
               <iframe
-                src="https://www.youtube.com/embed/NOhDysLnTvY"
+                src="https://www.youtube.com/embed/NOhDysLnTvY?version=3&enablejsapi=1"
                 title="YouTube video player"
                 allowfullscreen
                 loading="lazy"
+                data-item="2"
+              >
+              </iframe>
+            </div>
+
+            <div class="swiper-slide">
+              <iframe
+                id="33"
+                src="https://www.youtube.com/embed/aWmJ5DgyWPI?version=3&enablejsapi=1"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                data-item="3"
               >
               </iframe>
             </div>
 
             <div class="swiper-slide">
               <iframe 
-              src="https://www.youtube.com/embed/aWmJ5DgyWPI"
-              title="YouTube video player"
-
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-            </div>
-
-            <div class="swiper-slide">
-              <iframe 
-              src="https://www.youtube.com/embed/2OR0OCr6uRE"
-              title="YouTube video player" 
-
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              ></iframe>
+                src="https://www.youtube.com/embed/2OR0OCr6uRE?version=3&enablejsapi=1"
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                data-item="4"
+              >
+            </iframe>
             </div>
     
         </div>
@@ -546,8 +556,10 @@
           <div class="contacts__item">mail: <a href="mailto:info@louvre.fr">info@louvre.fr</a></div>
         </div>
         <div class="contacts__map">
-          <!-- <div class="contacts__img" id=''></div> -->
-          <img class="contacts__img" src="./assets/img/Rectangle.jpg">
+          <!-- <div class="contacts__map"> -->
+            <div id='map'></div>
+          <!-- </div> -->
+          <!-- <img class="contacts__img" src="./assets/img/Rectangle.jpg"> -->
         </div>
       </div>
     </div>
@@ -798,7 +810,6 @@
   
   <div class="cover hidden" id="cover"></div>
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
   <script src='./script.js' type="module"></script>
 </body>
 </html>

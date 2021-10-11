@@ -1,21 +1,33 @@
 function registerMap() {
-  L.mapbox.accessToken = 'pk.eyJ1IjoibGFuMzk0NTY2MyIsImEiOiJja3UwYThsYWQyM3AzMnJxdDh5cDhwMGRnIn0.QZJ4Y2w_sHI2JnimfEqD6g';
+  mapboxgl.accessToken = 'pk.eyJ1IjoibGFuMzk0NTY2MyIsImEiOiJja3UwYThsYWQyM3AzMnJxdDh5cDhwMGRnIn0.QZJ4Y2w_sHI2JnimfEqD6g';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v10',
+    center: [2.3364, 48.86091],
+    zoom: 16
+  });
 
-  let map = L.mapbox.map('map')
-    .setView([48.86091, 2.3364], 16)
-    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/light-v10'));
+  map.addControl(new mapboxgl.NavigationControl());
 
-    L.marker([48.86091, 2.3364]).addTo(map);
-    L.marker([48.8602, 2.3333]).addTo(map);
-    L.marker([48.8607, 2.3397]).addTo(map);
-    L.marker([48.8619, 2.3330]).addTo(map);
-    L.marker([48.8625, 2.3365]).addTo(map);
+  const marker1 = new mapboxgl.Marker({ color: 'black'})
+    .setLngLat([2.3364, 48.86091])
+    .addTo(map);
 
+  const marker2 = new mapboxgl.Marker({ color: 'black'})
+    .setLngLat([2.3333, 48.8602])
+    .addTo(map);
 
-    // const nav = new mapboxgl.NavigationControl({
-    //   visualizePitch: true
-    //   });
-    // map.addControl(nav, 'top-right');
+  const marker3 = new mapboxgl.Marker({ color: 'black'})
+    .setLngLat([2.3397, 48.8607])
+    .addTo(map);
+
+  const marker4 = new mapboxgl.Marker({ color: 'black'})
+    .setLngLat([2.3330, 48.8619])
+    .addTo(map);
+
+  const marker5 = new mapboxgl.Marker({ color: 'black'})
+    .setLngLat([2.3365, 48.8625])
+    .addTo(map);
 }
 
 export { registerMap }

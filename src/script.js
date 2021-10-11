@@ -1,6 +1,6 @@
 import {registerCustomVideoPlayer} from './js/custom-video.js';
 import {registerAside} from './js/aside.js';
-// import {registerMap} from './js/map';
+import {registerMap} from './js/map.js';
 import {registerModal} from './js/modal.js';
 import {registerGallery} from './js/gallery.js';
 import {registerExploreSlider} from './js/explore-slider.js';
@@ -12,7 +12,7 @@ import {registerVideoCarousel} from './js/video-carousel.js';
 
 registerCustomVideoPlayer();
 registerAside();
-// registerMap();
+registerMap();
 registerModal();
 registerGallery();
 registerExploreSlider();
