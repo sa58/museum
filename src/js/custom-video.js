@@ -37,46 +37,50 @@ function registerCustomVideoPlayer() {
   let tempVolume = 0;
   let poster = video.poster;
 
-
     document.addEventListener('keydown', (e) => {
       e.stopPropagation();
 
-      
-      if(e.code === 'Space') {
-        togglePlayVideo();
-      }
-
-      if(e.code === 'KeyM') {
-        // TODO
-        if(btnVolume.classList.contains('video__btn_mute')) {
-          btnVolume.classList.toggle('video__btn_mute');
-          video.volume = tempVolume;
-
-          const val = tempVolume * 100;
-
-          volume.style.background = `linear-gradient(to right, #710707 0%, #710707 ${val}%, #c4c4c4 ${val}%, #c4c4c4 100%)`;
-          volume.value = tempVolume;
-        } else {
-          btnVolume.classList.toggle('video__btn_mute');
-          tempVolume = video.volume;
-
-          video.volume = 0;
-          volume.style.background = `linear-gradient(to right, #710707 0%, #710707 ${0}%, #c4c4c4 ${0}%, #c4c4c4 100%)`;
-          volume.value = 0;
+      // TODO 
+      if(e.currentTarget.querySelector('.book__modal').classList.contains('hidden')) {
+        e.preventDefault();
+        if(e.code === 'Space') {
+          togglePlayVideo();
         }
+
+        if(e.code === 'KeyM') {
+          // TODO
+          if(btnVolume.classList.contains('video__btn_mute')) {
+            btnVolume.classList.toggle('video__btn_mute');
+            video.volume = tempVolume;
+
+            const val = tempVolume * 100;
+
+            volume.style.background = `linear-gradient(to right, #710707 0%, #710707 ${val}%, #c4c4c4 ${val}%, #c4c4c4 100%)`;
+            volume.value = tempVolume;
+          } else {
+            btnVolume.classList.toggle('video__btn_mute');
+            tempVolume = video.volume;
+  
+            video.volume = 0;
+            volume.style.background = `linear-gradient(to right, #710707 0%, #710707 ${0}%, #c4c4c4 ${0}%, #c4c4c4 100%)`;
+            volume.value = 0;
+          }
+        }
+  
+        if(e.code === 'KeyF') {
+          setFullSize();
+        }
+  
+        if(e.code === 'Comma') {
+          if (e.shiftKey) speedUp();
+        }
+  
+        if(e.code === 'Period') {
+          if (e.shiftKey) speedDown();
+        }
+  
       }
 
-      if(e.code === 'KeyF') {
-        setFullSize();
-      }
-
-      if(e.code === 'Comma') {
-        if (e.shiftKey) speedUp();
-      }
-
-      if(e.code === 'Period') {
-        if (e.shiftKey) speedDown();
-      }
 
     });
 
