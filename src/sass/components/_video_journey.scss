@@ -247,6 +247,7 @@
 .video__image {
   width: 100%;
   height: 100%;
+  padding-bottom: 86px;
   display: block;
 }
 
@@ -298,4 +299,15 @@
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
+}
+
+.video__speed {
+  position: absolute;
+  bottom: 20%;
+  color: #eee;
+  font-family: 'Roboto';
+  right: 10%;
+  font-size: x-large;
+  visibility: hidden;
+  transition: all 0.8s;
 }

@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museum</title>
+  
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
   <link href="./sass/style.css" rel="stylesheet">
   <link rel="icon" href="assets/favicon.ico">
 
@@ -14,7 +17,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;500;700&display=swap" rel="stylesheet">
   <link href="./assets/img/welcome-slider/1.jpg" rel="stylesheet">
-
   <!-- <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
   <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' /> -->
 </head>
@@ -122,16 +124,16 @@
 
         <div class="welcome__slider">
           <div class="welcome__counter">
-            <div>01</div>
+            <div class="welcome__num">01</div>
             <div>|</div>
             <div>05</div>
           </div>
           <div class="carousel">
-            <div class="carousel-item carousel-item_active"></div>
-            <div class="carousel-item"></div>
-            <div class="carousel-item"></div>
-            <div class="carousel-item"></div>
-            <div class="carousel-item"></div>
+            <div data-slide="0" class="carousel-item carousel-item_active"></div>
+            <div data-slide="1" class="carousel-item"></div>
+            <div data-slide="2" class="carousel-item"></div>
+            <div data-slide="3" class="carousel-item"></div>
+            <div data-slide="4" class="carousel-item"></div>
           </div>
           <div class="carousel-arrows">
             <button class="arrow arrow_left"></button>
@@ -264,7 +266,6 @@
               <div class="photo after">
                 <img src="assets/img/explore-slider/after.jpg" alt="After">
               </div>
-           
           </div>
         </div>
       </div>
@@ -291,6 +292,8 @@
 
           <button class="video__btn_big"></button>
 
+          <div class="video__speed">1dsf</div>
+
           <div class="video__settings">
             <div class="video__state">
               <button class="video__btn video__btn_pause"></button>
@@ -309,7 +312,81 @@
 
       </div>
 
-      <div class="journey-slider">
+      <div class="swiper-container">
+
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+    
+            <!-- Slides -->
+            <div class="swiper-slide">
+
+              <iframe
+              src="https://www.youtube.com/embed/zp1BXPX8jcU"
+              title="YouTube video player"
+              allowfullscreen
+              loading="lazy"
+            >
+            </iframe>
+
+            </div>
+            <div class="swiper-slide">
+
+              <iframe
+              src="https://www.youtube.com/embed/Vi5D6FKhRmo"
+              title="YouTube video player"
+              allowfullscreen
+              loading="lazy"
+            >
+            </iframe>
+            </div>
+
+            <div class="swiper-slide">
+              <iframe
+                src="https://www.youtube.com/embed/NOhDysLnTvY"
+                title="YouTube video player"
+                allowfullscreen
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+
+            <div class="swiper-slide">
+              <iframe 
+              src="https://www.youtube.com/embed/aWmJ5DgyWPI"
+              title="YouTube video player"
+
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            </div>
+
+            <div class="swiper-slide">
+              <iframe 
+              src="https://www.youtube.com/embed/2OR0OCr6uRE"
+              title="YouTube video player" 
+
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              ></iframe>
+            </div>
+    
+        </div>
+    
+   
+        <div class="jorney-counter_temp">
+          <button class="jorney-counter__arrow jorney-counter__arrow_left"></button>
+          <div class="jorney-counter">
+            <div class="journey-item journey-item_active"></div>
+            <div class="journey-item"></div>
+            <div class="journey-item"></div>
+            <div class="journey-item"></div>
+            <div class="journey-item"></div>
+          </div>
+          <button class="jorney-counter__arrow jorney-counter__arrow_right"></button>
+        </div>
+    </div>
+
+
+      <!-- <div class="journey-slider qqq">
         <div class="journey-slides">
           <div class="journey-wrap">
             <iframe
@@ -343,6 +420,17 @@
             >
             </iframe>
           </div>
+
+          <div class="journey-wrap journey-wrap_tablet">
+            <iframe
+              src="https://www.youtube.com/embed/NOhDysLnTvY"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            >
+            </iframe>
+          </div>
         </div>
 
         <div class="jorney-counter">
@@ -354,7 +442,7 @@
           <div class="journey-item"></div>
           <button class="jorney-counter__arrow jorney-counter__arrow_right"></button>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -508,7 +596,7 @@
   </footer>
 
 
-  <div class="book__modal">
+  <div class="book__modal hidden">
     <form>
       <div class="book__btn_close"></div>
       <div class="book__wrapper">
@@ -575,7 +663,7 @@
               <div class="section__underline"></div>
 
               <div class="entry-type">
-                <div class="age age_first">Basic 18+ (20 €)</div>
+                <div class="age age_first">Basic 18+ (<span class="entry_basic">20</span> €)</div>
                 <div class="age-quantity">
 
                   <div class="entry__amount">
@@ -587,7 +675,7 @@
                 </div>
               </div>
               <div class="entry-quantity">
-                <div class="age">Senior 65+ (10 €)</div>
+                <div class="age">Senior 65+ (<span class="entry_senior">10</span> €)</div>
                 <div class="age-quantity">
                   <div class="entry__amount">
                     <button data-action="senior" class="entry__item entry__btn" type="button" onclick="this.nextElementSibling.stepDown()">&#8211;</button>
@@ -626,12 +714,12 @@
           </div>
 
           <div class="price price_first price_basic">
-            <div class="price-age"><span class="num">0</span>Basic (20 €)</div>
+            <div class="price-age"><span class="num">0</span>Basic (<span class="entry_basic"></span> €)</div>
             <div class="price-sum"><span class="sum">0</span> €</div>
           </div>
 
           <div class="price price_senior">
-            <div class="price-age"><span class="num">0</span>Senior (10 €)</div>
+            <div class="price-age"><span class="num">0</span>Senior (<span class="entry_senior"></span> €)</div>
             <div class="price-sum"><span class="sum">0</span> €</div>
           </div>
 
@@ -709,6 +797,7 @@
 
   
   <div class="cover hidden" id="cover"></div>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
   <script src='./script.js' type="module"></script>
 </body>

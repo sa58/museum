@@ -48,6 +48,14 @@ function registerTicketsBase() {
 
       formSelect.value = x[0];
 
+      document.querySelectorAll('.entry_basic').forEach(el => {
+        el.textContent = price;
+      })
+
+      document.querySelectorAll('.entry_senior').forEach(el => {
+        el.textContent = price / 2;
+      })
+
       saveOrder(basic.value, senior.value);
 
       totalEl.textContent = total1 + total2;
@@ -111,7 +119,6 @@ function registerTicketsBase() {
 
 
   formSelect.addEventListener('change', (e) => {
-    console.log('++++', e.target.value)
     price = prices[e.target.value];
     types[e.target.value].checked = true;
 
@@ -121,17 +128,22 @@ function registerTicketsBase() {
     total2 = 0;
     total2 += price * Number(basic.value);
 
-
     document.querySelector('.price_basic .sum').textContent = total2;
     document.querySelector('.price_senior .sum').textContent = total1;
     document.querySelector('.book__total .total__sum').textContent = total1 + total2;
 
-
     document.querySelector('.overview_type').textContent = typesE[e.target.value];
 
-
-
     totalEl.textContent = total1 + total2;
+
+    document.querySelectorAll('.entry_basic').forEach(el => {
+      el.textContent = price;
+    })
+
+    document.querySelectorAll('.entry_senior').forEach(el => {
+      el.textContent = price / 2;
+    })
+
 
     saveOrder(formInputB.value, formInputS.value);
   })
@@ -160,12 +172,18 @@ function registerTicketsBase() {
     document.querySelector('.price_senior .sum').textContent = order.total1;
     document.querySelector('.book__total .total__sum').textContent = order.total1 + order.total2;
 
-
     document.querySelector('.overview_type').textContent = typesE[x[0]];
-
 
     formInputS.value = order.sValue;
     formInputB.value = order.bValue
+
+    document.querySelectorAll('.entry_basic').forEach(el => {
+      el.textContent = prices[x[0]];
+    })
+
+    document.querySelectorAll('.entry_senior').forEach(el => {
+      el.textContent = prices[x[0]] / 2;
+    })
   }
 
   function saveOrder(bv, sv) {

@@ -24,40 +24,48 @@
   }
 }
 
-.journey-wrap {
-  width: 100%;
+.swiper-container {
+  // width: 100%;
 
-  iframe {
-    width: 100%;
-    height: 252px;
-  }
+  // iframe {
+  //   // width: 100%;
+  //   // height: 100%;
+  // }
 
-  @include laptop {
-    max-width: 100%;
+  // @include laptop {
+  //   max-width: 100%;
 
-    iframe {
-      height: 170px;
-    }
-  }
+  //   iframe {
+  //     height: 170px;
+  //   }
+  // }
 
-  @include tablet {
-    &_tablet {
-      display: none;
-    }
+  // @include tablet {
+  //   &_tablet {
+  //     display: none;
+  //   }
 
-    iframe {
-      height: 199px;
-    }
-  }
+  //   iframe {
+  //     height: 199px;
+  //   }
+  // }
 
-  @include mobile {
-    iframe {
-      height: 101px;
-    }
-  }
+  // @include mobile {
+  //   iframe {
+  //     height: 101px;
+  //   }
+  // }
 }
 
 .jorney-counter {
+  width: unset !important;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.jorney-counter_temp {
+  // width: 20%;
   display: flex;
   justify-content: center;
   column-gap: 20px;
@@ -123,4 +131,24 @@
   &:hover {
     background-image: url(./../assets/img/carousel-video/arr-right-copy.svg);
   }
+}
+
+.swiper-wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.swiper-slide {
+  position: relative;
+  padding-bottom: 15.25%;
+  padding-top: 25px;
+  height: 0;
+}
+
+.swiper-slide iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

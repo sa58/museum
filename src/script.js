@@ -8,6 +8,7 @@ import {registerWelcomeCarousel} from './js/welcome-carousel.js';
 import {registerTicketsBase} from './js/tickets-base.js';
 import {registerFormValidation} from './js/form-validation.js';
 import {registerModalForm} from './js/modal-form.js';
+import {registerVideoCarousel} from './js/video-carousel.js';
 
 registerCustomVideoPlayer();
 registerAside();
@@ -19,3 +20,4 @@ registerWelcomeCarousel();
 registerTicketsBase();
 registerFormValidation();
 registerModalForm();
+registerVideoCarousel();

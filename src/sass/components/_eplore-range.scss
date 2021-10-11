@@ -35,7 +35,7 @@
 
 .slider-line::after {
   bottom: 2px;
-  height: 47%;
+  height: 46%;
 
   @include tablet {
     height: 45%;
@@ -76,7 +76,7 @@
 
 #example {
   position: relative;
-  max-width: 450px;
+  max-width: 520px;
 }
 
 .before {
@@ -94,6 +94,7 @@
   position: absolute;
   z-index: 50;
   height: 100%;
+  cursor: e-resize;
 }
 
 .restore__example input::-webkit-slider-thumb {
@@ -102,5 +103,5 @@
 }
 
 .photo img {
-  max-width: 450px;
+  max-width: 520px;
 }

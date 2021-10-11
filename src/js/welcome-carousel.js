@@ -2,73 +2,84 @@ function registerWelcomeCarousel() {
   let items = document.querySelectorAll('.carousel__item');
   let currentItem = 0;
   let isEnabled = true;
-  
-  function changeCurrentItem(n) {
-    console.log('-----', n)
 
+  let bullets = document.querySelectorAll('.carousel-item');
+  let num = document.querySelector('.welcome__num');
+
+  bullets.forEach(el => {
+    el.addEventListener('click', (e) => {
+      let needed = +e.target.dataset.slide;
+
+      num.textContent = `0${needed + 1}`
+
+      bullets[currentItem].classList.remove('carousel-item_active');
+      bullets[needed].classList.add('carousel-item_active');
+
+      if(e.target.dataset.slide >= currentItem) {
+        nextItem(needed - 1)
+      } else {
+        previousItem(needed + 1)
+      }
+    })
+  })
+
+  function changeCurrentItem(n) {
     currentItem = (n + items.length) % items.length;
   }
-  
+
   function hideItem(direction) {
-
-
-    console.log(items[currentItem])
+    bullets[currentItem].classList.remove('carousel-item_active');
 
     isEnabled = false;
     items[currentItem].classList.add(direction);
     items[currentItem].addEventListener('animationend', function() {
 
-      console.log('animationend');
-
       this.classList.remove('active', direction);
     });
   }
-  
+
   function showItem(direction) {
 
-    console.log(items[currentItem])
+    bullets[currentItem].classList.add('carousel-item_active');
+    num.textContent = `0${currentItem + 1}`
 
     items[currentItem].classList.add('next', direction);
-    // items[currentItem].classList.add('active');
     items[currentItem].addEventListener('animationend', function() {
-      console.log('animationend');
+
       items[currentItem].classList.remove('next', direction);
       items[currentItem].classList.add('active');
       isEnabled = true;
     });
   }
-  
+
   function nextItem(n) {
     hideItem('to-left');
     changeCurrentItem(n + 1);
     showItem('from-right');
   }
-  
+
   function previousItem(n) {
     hideItem('to-right');
     changeCurrentItem(n - 1);
     showItem('from-left');
   }
-  
+
   document.querySelector('.arrow_left').addEventListener('click', function() {
     if (isEnabled) {
       previousItem(currentItem);
     }
   });
-  
+
   document.querySelector('.arrow_right').addEventListener('click', function() {
-    console.log('next')
     if (isEnabled) {
       nextItem(currentItem);
     }
   });
 
 
-
-
+  // TODO: from webinar
 
   const swipedetect = (el) => {
-  
     let surface = el;
     let startX = 0;
     let startY = 0;
@@ -153,17 +164,8 @@ function registerWelcomeCarousel() {
     }, false);
   }
 
-
-
-
-
-
-
-
   var el = document.querySelector('.welcome__carousel');
   swipedetect(el);
-
-
 }
 
 export {registerWelcomeCarousel}

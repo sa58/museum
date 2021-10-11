@@ -10,6 +10,12 @@ function registerMap() {
     L.marker([48.8607, 2.3397]).addTo(map);
     L.marker([48.8619, 2.3330]).addTo(map);
     L.marker([48.8625, 2.3365]).addTo(map);
+
+
+    // const nav = new mapboxgl.NavigationControl({
+    //   visualizePitch: true
+    //   });
+    // map.addControl(nav, 'top-right');
 }
 
 export { registerMap }
