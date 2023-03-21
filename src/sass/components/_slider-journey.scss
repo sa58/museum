@@ -1,0 +1,154 @@
+.journey-slides {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  column-gap: 42px;
+
+  @include laptop {
+    column-gap: 40px;
+    margin-top: 38px;
+    margin-bottom: 38px;
+  }
+
+  @include tablet {
+    column-gap: 20px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+
+  @include mobile {
+    column-gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.swiper-container {
+  // width: 100%;
+
+  // iframe {
+  //   // width: 100%;
+  //   // height: 100%;
+  // }
+
+  // @include laptop {
+  //   max-width: 100%;
+
+  //   iframe {
+  //     height: 170px;
+  //   }
+  // }
+
+  // @include tablet {
+  //   &_tablet {
+  //     display: none;
+  //   }
+
+  //   iframe {
+  //     height: 199px;
+  //   }
+  // }
+
+  // @include mobile {
+  //   iframe {
+  //     height: 101px;
+  //   }
+  // }
+}
+
+.jorney-counter {
+  width: unset !important;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.jorney-counter_temp {
+  // width: 20%;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.journey-item {
+  width: 12px;
+  height: 12px;
+  background-color: #999;
+  row-gap: 40px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    background-color: $color-dark-red;
+  }
+
+  @include tablet {
+    width: 10px;
+    height: 10px;
+  }
+
+  @include mobile {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.journey-item_active {
+  background-color: #333;
+}
+
+.jorney-counter__arrow {
+  background-color: transparent;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 12px;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  @include mobile {
+    width: 8px;
+    height: 8px;
+    background-size: 100% 100%;
+  }
+}
+
+.jorney-counter__arrow_left {
+  background-image: url(./../assets/img/carousel-video/arr-left.svg);
+
+  &:hover {
+    background-image: url(./../assets/img/carousel-video/arr-left-copy.svg);
+  }
+}
+
+.jorney-counter__arrow_right {
+  background-image: url(./../assets/img/carousel-video/arr-right.svg);
+
+  &:hover {
+    background-image: url(./../assets/img/carousel-video/arr-right-copy.svg);
+  }
+}
+
+.swiper-wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.swiper-slide {
+  position: relative;
+  padding-bottom: 15.25%;
+  padding-top: 25px;
+  height: 0;
+}
+
+.swiper-slide iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

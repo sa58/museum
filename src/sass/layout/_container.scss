@@ -1,0 +1,48 @@
+// TODO: move to common
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: $content-width;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  @include laptop {
+    padding-right: 20px;
+    padding-left: 20px;
+  };
+}
+
+.section__title {
+  font-family: $font-secondary;
+  font-size: $font-size-xl;
+  line-height: 90px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  @include laptop {
+    @include font(Forum, 50px, normal, 75px);
+  }
+
+  @include tablet {
+    @include font(Forum, 40px, 400, 60px);
+  }
+
+  @include mobile {
+    @include font(Forum, $font-size-md, 400, 40px);
+  }
+}
+
+.section__title_light {
+  color: $color-white;
+}
+
+.section__title_gold {
+  color: $color-gold;
+}
+
+.section_dark {
+  background-color: $color-dark;
+}

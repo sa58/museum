@@ -1,0 +1,132 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  padding-top: $space-size;
+  padding-bottom: $space-size;
+
+  @include laptop {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  @include tablet {
+    // TODO: match PP
+    height: 41px;
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  @include mobile {
+    // TODO: match PP
+    height: unset;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  column-gap: 25px;
+  text-decoration: none;
+
+  @include mobile {
+    img {
+      width: 29px;
+    }
+  };
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover > img {
+    filter: $filter-gold;
+  }
+
+  &:hover > .logo__title {
+    color: $color-gold;
+  }
+}
+
+.burger {
+  display: none;
+
+  @include laptop {
+    width: 32px;
+    height: 18px;
+    display: block;
+    align-self: center;
+    background-image: url(./../assets/img/svg/burger.svg);
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &.open {
+      background-image: url(./../assets/img/svg/aside-close.svg);
+      width: 25px;
+      height: 25px;
+    }
+  };
+}
+
+.head .nav {
+  @include laptop {
+    display: none;
+  }
+}
+
+.logo img {
+  transition: filter $transition-base;
+}
+
+.head__nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo__title {
+  @include font(Forum, $font-size-md, normal, 31px);
+
+  @include tablet {
+    @include font(Forum, $font-size-md, normal, 50px);
+  }
+
+  @include mobile {
+    @include font(Forum, 16px, 400, 18px);
+  }
+
+  color: $color-white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  transition: color $transition-base;
+  letter-spacing: 5px;
+}
+
+.nav__item {
+  @include font($font-primary, $font-size-sm, 200, 26px);
+
+  color: $color-white;
+  letter-spacing: 2px;
+  transition: color $transition-base;
+  text-decoration: none;
+
+  &_pl {
+    padding-left: 56.5px;
+
+    @include desktop {
+      padding-left: 50px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $color-gold;
+  }
+
+  &:active {
+    cursor: pointer;
+    color: $color-gold;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
